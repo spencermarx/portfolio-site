@@ -10,9 +10,11 @@ class Header extends Component {
             <React.Fragment>
                 <Navbar bg="transparent" expand="lg">
                     <Container>
-                        <Navbar.Brand href="/" className="Logo">
-                            Spencer Marx
-                        </Navbar.Brand>
+                        <Link to="/">
+                            <Navbar.Brand href="/" className="Logo">
+                                Spencer Marx
+                            </Navbar.Brand>
+                        </Link>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="ml-auto">
