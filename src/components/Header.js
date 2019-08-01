@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'gatsby';
+import SiteMetaData from './SiteMetadata'
 import './header.scss';
 
 
@@ -8,6 +9,7 @@ class Header extends Component {
     render() {
         return (
             <React.Fragment>
+                <SiteMetaData/>
                 <Navbar bg="transparent" expand="lg">
                     <Container>
                         <Link to="/">
