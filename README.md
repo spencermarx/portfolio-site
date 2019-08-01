@@ -3,7 +3,7 @@
   <img alt="Spencer Marx" src="https://res.cloudinary.com/spencermarx/image/upload/v1564658385/portfolio-site/logo.png" width="250" />
 </h1>
 
-The website was built using React, React-Bootstrap, and GatsbyJS. Feel free to reach out with any questions.
+This portfolio site was built to showcase Full Stack Developer, Spencer Marx, his relevant skills, experience, and projects. The technology stack for this site includes React, React-Bootstrap, and GatsbyJS. Feel free to reach out with any questions.
 
 ## ⭐️ Highlights ⭐️
 
