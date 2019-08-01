@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "portfolio-site",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "A portfolio site built using React, Bootstrap, and Gatsby by Full Stack Developer, Spencer Marx.",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
