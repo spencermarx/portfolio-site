@@ -1,0 +1,41 @@
+// ======================
+// Global Variables
+// ======================
+
+// ======================
+// Color Variables
+// ======================
+
+$primary: #006db7;
+$primary-hover: #197fc4;
+$secondary: #37b5ff;
+$secondary-hover: #64c6ff;
+$light: #f8f8f8;
+$gray: #6e6e6e;
+$dark: #1d2731;
+$success: $primary;
+$failure: #f09c9c;
+$failure-hover: #d67373;
+$active-link: white;
+
+// ======================
+// Breakpoints
+// ======================
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+) !default;
+
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// ======================
+// Transitions
+// ======================
+$transition-smooth-normal: 350ms ease-in;
