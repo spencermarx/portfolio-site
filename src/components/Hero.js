@@ -5,8 +5,9 @@ class Hero extends Component {
         return (
             <React.Fragment>
                 <section id="Hero">
-                    <div className="my-5 text-center">
-                        <h1>Full Stack Developer with<br />expertise in UX Design and GIS</h1>
+                    <div className="my-5 text-left">
+                        <h1>Hi, my name is Spencer.<br />I'm a Full Stack Developer living in Boston, MA.</h1>
+                        <p>Background in UX Design and Geographic Information Science. Currently considering new work opportunities building innovative digital experiences</p>
                     </div>
                 </section>
             </React.Fragment>
