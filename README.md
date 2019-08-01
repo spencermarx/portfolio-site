@@ -1,5 +1,5 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
+<p align="left">
   <a href="https://www.spencersmarx.com">
     <img alt="Spencer Marx" src="https://res.cloudinary.com/spencermarx/image/upload/v1564658385/portfolio-site/logo.png" width="250" />
   </a>
