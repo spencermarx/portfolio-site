@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import Layout from '../components/Layout';
+import Hero from '../components/Hero'
+import { Container } from 'react-bootstrap';
 
 class IndexPage extends Component{
     render(){
         return(
             <React.Fragment>
                 <Layout>
-                    <h1>Hello</h1>
+                    <Container>
+                        <Hero />
+                    </Container>
                 </Layout>
             </React.Fragment>
         )
