@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Layout from '../components/Layout';
-import Hero from '../components/Hero'
+import Hero from '../components/Hero';
+import Skills from '../components/Skills';
 import { Container } from 'react-bootstrap';
 
 class IndexPage extends Component{
@@ -10,6 +11,7 @@ class IndexPage extends Component{
                 <Layout>
                     <Container>
                         <Hero />
+                        <Skills/>
                     </Container>
                 </Layout>
             </React.Fragment>
