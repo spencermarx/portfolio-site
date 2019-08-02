@@ -12,3 +12,11 @@ This portfolio site was built to showcase Full Stack Developer, Spencer Marx, hi
 2.  **React-Bootstrap**    
 
 3.  **Gatsby**
+
+4.  **GraphQL**
+
+5.  **Motion.js**
+
+6.  **Axios**
+
+7.  **SCSS**
