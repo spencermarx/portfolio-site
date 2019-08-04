@@ -1,0 +1,65 @@
+import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
+import ProjectCard from './ProjectCard';
+import { Row, Col } from 'react-bootstrap';
+
+
+const Projects = () => {
+    const data = useStaticQuery(graphql`
+    query {
+        allContentfulProject(sort: { fields: projectNumber, order: DESC }) {
+            edges {
+            node {
+                projectType
+                projectTitle
+                imageThumbnail {
+                file {
+                    url
+                }
+                }
+                technologies
+                slug
+                themeColor
+                websiteLink
+                githubLink
+                projectNumber
+                shortDescription{
+                shortDescription
+                }
+            }
+            }
+        }
+        }
+    `);
+
+    const projects = data.allContentfulProject.edges;
+
+    console.log(projects);
+
+    return (
+        <React.Fragment>
+            <section id="Projects" className="my-5">
+                <h1 className="text-center">Selected Projects</h1>
+                <Row className="py-3">
+                    {projects.map(edge =>
+                        <Col xs={12} sm={6} className="d-flex justify-content-center">
+                            <ProjectCard
+                                projectType={edge.node.projectType}
+                                projectTitle={edge.node.projectTitle}
+                                imageThumbnail={edge.node.imageThumbnail.file.url}
+                                themeColor={edge.node.themeColor}
+                                technologies={edge.node.technologies}
+                                shortDescription={edge.node.shortDescription.shortDescription}
+                                githubLink={edge.node.githubLink}
+                                websiteLink={edge.node.websiteLink}
+                            />
+                        </Col>
+                    )}
+                </Row>
+            </section>
+        </React.Fragment>
+    )
+}
+
+
+export default Projects;

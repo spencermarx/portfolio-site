@@ -1,18 +1,19 @@
-.SkillCard{
-    margin: 2rem auto;
-    width: 200px;
-    height: 320px;
+.SkillCard {
+  margin: 2rem auto;
+  width: 200px;
+  height: 320px;
+  border-radius: 0;
 }
-.SkillCard-Image{
-    width: 115px;
-    height: 115px;
-    margin: auto;
+.SkillCard-Image {
+  width: 115px;
+  height: 115px;
+  margin: auto;
 }
 
-.SkillCard-Skills{
-    margin-block-start: 0px;
-    margin-block-end: 0px;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 0px;
+.SkillCard-Skills {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px;
 }
