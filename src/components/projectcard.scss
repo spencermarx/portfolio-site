@@ -1,0 +1,19 @@
+.ProjectCard {
+  width: 350px;
+  height: 375px;
+  border-radius: 0;
+}
+
+.ProjectCard-Image {
+  object-fit: cover;
+}
+
+.ProjectCard-Tech-Wrapper {
+  height: 30px;
+  color: white;
+  margin: 0.5rem auto;
+}
+
+.ProjectCard-Button {
+  width: 140px;
+}
