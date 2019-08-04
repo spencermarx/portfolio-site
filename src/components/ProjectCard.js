@@ -24,6 +24,7 @@ class ProjectCard extends Component {
         const { projectType } = this.props;
         const { projectTitle } = this.props;
         const { imageThumbnail } = this.props;
+        const { technologyLabel } = this.props;
         const { technologies } = this.props;
         const { shortDescription } = this.props;
         const { githubLink } = this.props;
@@ -40,7 +41,7 @@ class ProjectCard extends Component {
                 </Card>
                 <Card className="ProjectCard" key="back" onMouseLeave={this.onHover}>
                     <Card.Body className="ProjectCard-Tech">
-                        <h4 className="ProjectCard-Tech text-center" style={{color: themeColor}}>Tech</h4>
+                        <h4 className="ProjectCard-Tech text-center" style={{color: themeColor}}>{technologyLabel}</h4>
                         <Row>
                             {technologies.map(tech =>
                                 <Col xs={5} className="ProjectCard-Tech-Wrapper" style={{background: themeColor, color:'#FFF'}}>
@@ -48,7 +49,7 @@ class ProjectCard extends Component {
                                 </Col>
                             )}
                         </Row>
-                    <p className="ProjectCard-Short-Desription text-center mt-3 mb-4">{shortDescription}</p>
+                    <p className="ProjectCard-Short-Description text-center mt-3 mb-4">{shortDescription}</p>
                     <Row>
                         <Col xs={6} className="d-flex justify-content-center">
                             <CustomButton
@@ -60,7 +61,7 @@ class ProjectCard extends Component {
                             border= "2px solid"
                             borderColor={themeColor}
                             fill="none"
-                            >Source Code</CustomButton>
+                            >View Source</CustomButton>
                         </Col>
                         <Col xs={6} className="d-flex justify-content-center">
                             <CustomButton
