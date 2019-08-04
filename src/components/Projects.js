@@ -17,6 +17,7 @@ const Projects = () => {
                     url
                 }
                 }
+                technologyLabel
                 technologies
                 slug
                 themeColor
@@ -40,7 +41,7 @@ const Projects = () => {
         <React.Fragment>
             <section id="Projects" className="my-5">
                 <h1 className="text-center">Selected Projects</h1>
-                <Row className="py-3">
+                <Row className="py-4">
                     {projects.map(edge =>
                         <Col xs={12} sm={6} className="d-flex justify-content-center">
                             <ProjectCard
@@ -48,6 +49,7 @@ const Projects = () => {
                                 projectTitle={edge.node.projectTitle}
                                 imageThumbnail={edge.node.imageThumbnail.file.url}
                                 themeColor={edge.node.themeColor}
+                                technologyLabel={edge.node.technologyLabel}
                                 technologies={edge.node.technologies}
                                 shortDescription={edge.node.shortDescription.shortDescription}
                                 githubLink={edge.node.githubLink}
