@@ -1,0 +1,20 @@
+@import "./layout.scss";
+
+.ContactForm {
+  margin-top: 2rem;
+}
+
+.ContactForm-Wrapper {
+  margin: auto;
+  max-width: 600px;
+  padding: 2rem;
+  box-shadow: $shadow-normal;
+}
+
+.ContactForm-Form-Input {
+  margin: 0.5rem 0;
+}
+
+.ContactForm-Button {
+  margin-top: 1rem;
+}
