@@ -1,9 +1,23 @@
+@import "./layout.scss";
+
 @font-face {
   font-family: "Permanent Marker";
   src: url("../fonts/PermanentMarker-Regular.ttf");
 }
 
-.Logo {
+.Header-Logo {
   font-family: "Permanent Marker", sans-serif;
   font-size: 2rem;
+}
+
+.Header-Links {
+  font-size: 1.2rem;
+  color: black;
+  margin: auto 1.2rem;
+  transition: $transition-smooth-fast;
+
+  &:hover {
+    color: rgb(110, 110, 110);
+    text-decoration: none;
+  }
 }
