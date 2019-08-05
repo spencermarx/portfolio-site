@@ -5,13 +5,17 @@ import './skillcard.scss';
 
 class SkillCard extends Component {
     render() {
-        const title = this.props.title
-        const image = this.props.imageURL
-        const skillArray = this.props.skills
+        const title = this.props.title;
+        const imageURL = this.props.image.file.url;
+        const skillArray = this.props.skills;
         return (
             <React.Fragment>
                 <Card className="SkillCard">
-                    <img className="SkillCard-Image" variant="top" src={image} alt="Icon" />
+                    <img
+                        className="SkillCard-Image"
+                        variant="top"
+                        src={imageURL}
+                        alt="Icon" />
                     <Card.Body className="text-center">
                         <Card.Title className="SkillCard-Title">{title}</Card.Title>
                         <ul className="SkillCard-Skills">
