@@ -43,7 +43,7 @@ const Projects = () => {
                 <h1 className="text-center">Selected Projects</h1>
                 <Row className="py-4">
                     {projects.map(edge =>
-                        <Col xs={12} sm={6} className="d-flex justify-content-center">
+                        <Col xs={12} sm={6} className="d-flex justify-content-center my-4">
                             <ProjectCard
                                 projectType={edge.node.projectType}
                                 projectTitle={edge.node.projectTitle}
