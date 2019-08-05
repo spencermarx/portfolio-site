@@ -21,7 +21,10 @@ const AboutPage = () => {
                 active
                 headshot {
                     file {
-                    url
+                        url
+                        }
+                    fluid(maxWidth: 600){
+                    ...GatsbyContentfulFluid
                     }
                 }
                 aboutDescription {
@@ -41,7 +44,7 @@ const AboutPage = () => {
         <React.Fragment>
             <Layout>
                 <Container>
-                    <Headshot headshotImage={aboutData.headshot.file.url}/>
+                    <Headshot headshotImage={aboutData.headshot} />
                     <AboutDetails funFacts={aboutData.funFacts} aboutDescription={aboutData.aboutDescription.aboutDescription} />
                 </Container>
             </Layout>

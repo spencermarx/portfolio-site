@@ -23,7 +23,7 @@ class ProjectCard extends Component {
     render() {
         const { projectType } = this.props;
         const { projectTitle } = this.props;
-        const { imageThumbnail } = this.props;
+        const { fluid } = this.props.imageThumbnail;
         const { technologyLabel } = this.props;
         const { technologies } = this.props;
         const { shortDescription } = this.props;
@@ -33,7 +33,7 @@ class ProjectCard extends Component {
         return (
             <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
                 <Card className="ProjectCard" key="front" onMouseEnter={this.onHover}>
-                    <ProjectThumbnail imageThumbnail={imageThumbnail} />
+                    <ProjectThumbnail fluid={fluid} />
                     <Card.Body className="text-center">
                         <Card.Title className="ProjectCard-Title">{projectType}</Card.Title>
                         <Card.Subtitle className="ProjectCard-Title">{projectTitle}</Card.Subtitle>
