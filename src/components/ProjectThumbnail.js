@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
+import Img from "gatsby-image";
 import './projectthumbnail.scss';
 
 class ProjectThumbnail extends Component{
     render(){
-        const { imageThumbnail } = this.props;
+        const   {fluid}   = this.props;
         return(
             <div className="ProjectThumbnail">
-                <img className="ProjectThumbnail-Image" src={imageThumbnail} alt="Project Thumbnail"/>
+                <Img
+                className="ProjectThumbnail-Image"
+                fluid={fluid}
+                alt="Project Thumbnail"/>
             </div>
         )
     }

@@ -11,9 +11,9 @@ const Skills = () => {
             node {
                 title
                 image {
-                file {
-                    url
-                }
+                    file {
+                        url
+                        }
                 }
                 skills
                 pageOrder
@@ -32,9 +32,9 @@ const Skills = () => {
                     {skillCards.map(edge =>
                         <Col xs={12} sm={6} lg={3} className="d-flex justify-content-center">
                             <SkillCard
-                            title = {edge.node.title}
-                            imageURL = {edge.node.image.file.url }
-                            skills={edge.node.skills}/>
+                                title={edge.node.title}
+                                image={edge.node.image}
+                                skills={edge.node.skills} />
                         </Col>
                     )}
                 </Row>
