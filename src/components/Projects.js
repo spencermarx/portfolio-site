@@ -35,7 +35,7 @@ const Projects = () => {
 
     const projects = data.allContentfulProject.edges;
 
-    console.log(projects);
+    // console.log(projects);
 
     return (
         <React.Fragment>
