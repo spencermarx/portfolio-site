@@ -13,9 +13,12 @@ const Projects = () => {
                 projectType
                 projectTitle
                 imageThumbnail {
-                file {
-                    url
-                }
+                    file {
+                        url
+                    }
+                    fluid(maxWidth: 350){
+                        ...GatsbyContentfulFluid
+                        }
                 }
                 technologyLabel
                 technologies
@@ -47,7 +50,7 @@ const Projects = () => {
                             <ProjectCard
                                 projectType={edge.node.projectType}
                                 projectTitle={edge.node.projectTitle}
-                                imageThumbnail={edge.node.imageThumbnail.file.url}
+                                imageThumbnail={edge.node.imageThumbnail}
                                 themeColor={edge.node.themeColor}
                                 technologyLabel={edge.node.technologyLabel}
                                 technologies={edge.node.technologies}
