@@ -8,7 +8,7 @@ class ErrorForm extends Component {
         return (
             <React.Fragment>
                 <div className="ErrorForm">
-                    <h3 className="ErrorForm-Message text-center">Something Went Wrong!</h3>
+                    <h5 className="ErrorForm-Message text-center">Something Went Wrong!</h5>
                     <p className="ErrorForm-SubMessage text-center">Try submitting the form again or contact us by&nbsp;
                      <a className="ErrorForm-Link" href="mailto:hello@yourrestaurant.online?subject=Hi%20there!">email</a>
                     </p>

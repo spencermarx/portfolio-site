@@ -7,7 +7,7 @@ class Loading extends Component {
         return (
             <React.Fragment>
                 <div className="Loading">
-                    <h3 className="Loading-Message text-center">Sending Message</h3>
+                    <h5 className="Loading-Message text-center">Sending Message</h5>
                     <p className="Loading-SubMessage text-center">Hang on! Your message is on its way!</p>
                     <div className="Loading-Balls">
                         <div className="Loading-Balls-Bounce1"></div>
