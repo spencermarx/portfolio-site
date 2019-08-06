@@ -6,9 +6,6 @@ import ErrorForm from './ErrorForm';
 import axios from 'axios';
 import './contactform.scss';
 
-const qs = require('qs');
-
-
 
 class ContactForm extends Component {
     constructor(props) {
@@ -44,14 +41,8 @@ class ContactForm extends Component {
             'email': email,
             'message': message,
         };
-        const data = {
-            method: 'POST',
-            headers: { 'content-type': 'application/x-www-form-urlencoded' },
-            data: qs.stringify(formObject),
-            url: '/',
-          };
 
-        this.sendFormWithAxios(data);
+        this.sendFormWithAxios(formObject);
 
         event.preventDefault();
     }
@@ -151,9 +142,13 @@ class ContactForm extends Component {
         )
     }
 
-    sendFormWithAxios(data) {
+    sendFormWithAxios(formObject) {
         this.setState({ loading: true })
-        axios.post(data)
+        axios.post('/', formObject, {
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            }
+        })
             .then((result) => {
                 console.log("Success!");
                 console.log(result);
