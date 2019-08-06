@@ -3,7 +3,6 @@ import { Form, Row, Col, Button } from 'react-bootstrap';
 import Loading from './Loading';
 import CompletedForm from './CompletedForm';
 import ErrorForm from './ErrorForm';
-// import axios from 'axios';
 import './contactform.scss';
 
 const encode = (data) => {
