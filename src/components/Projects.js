@@ -38,6 +38,15 @@ const Projects = () => {
 
     const projects = data.allContentfulProject.edges;
 
+    // Dynamic Bootstrap Justification
+    let itemIndex;
+    const getJustification = (itemIndex) => {
+        if(itemIndex % 2 === 0){
+            return 'justify-content-md-end';
+        } else {
+            return 'justify-content-md-start';
+        } };
+    let justification;
     // console.log(projects);
 
     return (
@@ -45,8 +54,13 @@ const Projects = () => {
             <section id="Projects" className="my-5">
                 <h1 className="text-center">Selected Projects</h1>
                 <Row className="py-4">
-                    {projects.map(edge =>
-                        <Col xs={12} sm={6} className="d-flex justify-content-center my-4">
+                    {projects.map((edge) => {
+                        // Get Justification
+                        itemIndex = projects.indexOf(edge);
+                        justification = getJustification(itemIndex);
+
+                        // Return final Project Card
+                        return(<Col xs={12} md={6} className={`d-flex justify-content-center ${justification} my-4`}>
                             <ProjectCard
                                 projectType={edge.node.projectType}
                                 projectTitle={edge.node.projectTitle}
@@ -58,7 +72,8 @@ const Projects = () => {
                                 githubLink={edge.node.githubLink}
                                 websiteLink={edge.node.websiteLink}
                             />
-                        </Col>
+                        </Col>)
+                        }
                     )}
                 </Row>
             </section>
