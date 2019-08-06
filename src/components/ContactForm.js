@@ -3,9 +3,14 @@ import { Form, Row, Col, Button } from 'react-bootstrap';
 import Loading from './Loading';
 import CompletedForm from './CompletedForm';
 import ErrorForm from './ErrorForm';
-import axios from 'axios';
+// import axios from 'axios';
 import './contactform.scss';
 
+const encode = (data) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+  }
 
 class ContactForm extends Component {
     constructor(props) {
@@ -35,14 +40,13 @@ class ContactForm extends Component {
     handleSubmit(event) {
         const { firstName, lastName, email, message } = this.state;
         const formObject = {
-            'form-name': 'inquiryForm',
             'firstName': firstName,
             'lastName': lastName,
             'email': email,
             'message': message,
         };
 
-        this.sendFormWithAxios(formObject);
+        this.sendFormWithFetch(formObject);
 
         event.preventDefault();
     }
@@ -142,13 +146,13 @@ class ContactForm extends Component {
         )
     }
 
-    sendFormWithAxios(formObject) {
+    sendFormWithFetch(formObject) {
         this.setState({ loading: true })
-        axios.post('/', formObject, {
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded"
-            }
-        })
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: encode({"form-name": "contact", ...formObject})
+          })
             .then((result) => {
                 console.log("Success!");
                 console.log(result);
