@@ -64,6 +64,7 @@ class ContactForm extends Component {
                             netlify-honeypot="bot-field"
                             data-netlify="true"
                             onSubmit={this.handleSubmit}>
+                            <input type="hidden" name="bot-field" />
                             {this.state.loading ? (
                                 <Loading />
                             ) : this.state.complete ? (
@@ -72,7 +73,6 @@ class ContactForm extends Component {
                                 <ErrorForm handleReset={this.handleReset} />
                             ) : (
                                             <div>
-                                                <input type="hidden" name="bot-field" />
                                                 <Row>
                                                     <Col xs={12} md={6}>
                                                         <Form.Control
