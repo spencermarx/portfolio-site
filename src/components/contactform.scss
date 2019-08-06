@@ -7,8 +7,16 @@
 .ContactForm-Wrapper {
   margin: auto;
   max-width: 600px;
+  height: 382px;
   padding: 2rem;
   box-shadow: $shadow-normal;
+}
+
+// Define width and height so on change states wrapper doesn't change sizes
+@media (min-width: $breakpoint-md) {
+  .ContactForm-Wrapper {
+    height: 328px;
+  }
 }
 
 .ContactForm-Form-Input {

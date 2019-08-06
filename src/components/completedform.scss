@@ -1,0 +1,63 @@
+@import "./layout.scss";
+
+.CompletedForm {
+  position: relative;
+  margin: auto;
+  top: 50px;
+}
+
+// -------- Form - Check mark --------
+$curve: cubic-bezier(0.65, 0, 0.45, 1);
+
+.CompletedForm-Checkmark {
+  margin: 1rem auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: white;
+  stroke-miterlimit: 10;
+  box-shadow: inset 0px 0px 0px $primary;
+  animation: checkFill 0.4s ease-in-out 0.4s forwards,
+    checkScale 0.3s ease-in-out 0.9s both;
+}
+
+.CompletedForm-Checkmark-Circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: $primary;
+  fill: none;
+  animation: checkStroke 0.6s $curve forwards;
+}
+
+.CompletedForm-Checkmark-Check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: checkStroke 0.3s $curve 0.8s forwards;
+}
+
+@keyframes checkStroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes checkScale {
+  0%,
+  100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+
+@keyframes checkFill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px $primary;
+  }
+}
