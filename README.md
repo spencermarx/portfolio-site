@@ -17,6 +17,6 @@ This portfolio site was built to showcase Full Stack Developer, Spencer Marx, hi
 
 5.  **Motion.js**
 
-6.  **Axios**
+6.  **Fetch AJAX**
 
 7.  **SCSS**
