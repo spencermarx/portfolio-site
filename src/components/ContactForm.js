@@ -38,10 +38,11 @@ class ContactForm extends Component {
     handleSubmit(event) {
         const { firstName, lastName, email, message } = this.state;
         const formObject = {
-            firstName: firstName,
-            lastName: lastName,
-            email: email,
-            message: message,
+            'form-name': 'inquiryForm',
+            'firstName': firstName,
+            'lastName': lastName,
+            'email': email,
+            'message': message,
         };
         const data = {
             method: 'POST',
