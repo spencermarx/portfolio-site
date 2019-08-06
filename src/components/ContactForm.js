@@ -45,6 +45,7 @@ class ContactForm extends Component {
             'email': email,
             'message': message,
         };
+        console.log(formObject);
 
         this.sendFormWithFetch(formObject);
 
@@ -56,7 +57,7 @@ class ContactForm extends Component {
     }
 
     render() {
-
+        const { firstName, lastName, email, message } = this.state;
         return (
             <React.Fragment>
                 <section className="ContactForm">
@@ -84,7 +85,7 @@ class ContactForm extends Component {
                                                             className="ContactForm-Form-Input"
                                                             name="firstName"
                                                             placeholder="First name *"
-                                                            value={this.state.value}
+                                                            value={firstName}
                                                             onChange={this.handleChange}
                                                             required
                                                         />
@@ -95,7 +96,7 @@ class ContactForm extends Component {
                                                             className="ContactForm-Form-Input"
                                                             name="lastName"
                                                             placeholder="Last name *"
-                                                            value={this.state.value}
+                                                            value={lastName}
                                                             onChange={this.handleChange}
                                                             required />
                                                     </Col>
@@ -108,7 +109,7 @@ class ContactForm extends Component {
                                                             name="email"
                                                             type="email"
                                                             placeholder="Enter email *"
-                                                            value={this.state.value}
+                                                            value={email}
                                                             onChange={this.handleChange}
                                                             required />
                                                     </Col>
@@ -122,7 +123,7 @@ class ContactForm extends Component {
                                                             as="textarea"
                                                             rows="3"
                                                             placeholder="How can I help you?"
-                                                            value={this.state.value}
+                                                            value={message}
                                                             onChange={this.handleChange} />
                                                     </Col>
                                                 </Row>
@@ -148,7 +149,7 @@ class ContactForm extends Component {
 
     sendFormWithFetch(formObject) {
         this.setState({ loading: true })
-        fetch("/", {
+        fetch("/contact/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: encode({"form-name": "contact", ...formObject})
