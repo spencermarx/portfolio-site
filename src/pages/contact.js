@@ -9,7 +9,7 @@ class ContactPage extends Component {
             <React.Fragment>
                 <Layout>
                     <Container>
-                        <h1 className="text-center mt-4">Contact Me</h1>
+                    <h1 className="text-center mt-4">Contact Me</h1>
                         <p className="text-center">Have a question or want to work together?</p>
                         <ContactForm />
                     </Container>

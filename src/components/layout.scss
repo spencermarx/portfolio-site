@@ -6,7 +6,7 @@
 // Color Variables
 // ======================
 
-$primary: #006db7;
+$primary: #000000;
 $primary-hover: #197fc4;
 $secondary: #37b5ff;
 $secondary-hover: #64c6ff;
@@ -14,8 +14,8 @@ $light: #f8f8f8;
 $gray: #6e6e6e;
 $dark: #1d2731;
 $success: $primary;
-$failure: #f09c9c;
-$failure-hover: #d67373;
+$failure: #db6565;
+$failure-hover: #db8080;
 $active-link: white;
 
 // ======================
@@ -49,6 +49,9 @@ $shadow-normal: 0px 2px 8px rgba(0, 0, 0, 0.25);
 // ======================
 // Global Rules
 // ======================
+body {
+  color: $dark;
+}
 
 section {
   margin: 1rem 0;
@@ -63,4 +66,15 @@ ul {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   padding-inline-start: 10px;
+}
+
+a {
+  color: $dark;
+  transition: $transition-smooth-normal;
+
+  &:hover {
+    color: $gray;
+    cursor: pointer;
+    text-decoration: none;
+  }
 }

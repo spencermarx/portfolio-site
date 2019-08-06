@@ -1,0 +1,92 @@
+@import "./layout.scss";
+
+.ErrorForm {
+  position: relative;
+  margin: auto;
+  top: 50px;
+}
+
+.ErrorForm-Message,
+.ErrorForm-SubMessage,
+.ErrorForm-Link {
+  color: $failure;
+}
+
+.ErrorForm-Link {
+  transition: $transition-smooth-normal;
+  &:hover {
+    color: $failure-hover;
+    text-decoration: underline;
+  }
+}
+
+.ErrorForm-Button {
+  margin: 2rem auto;
+  display: block;
+  color: $failure;
+  border: 1px solid $failure;
+
+  &:hover {
+    background: $failure;
+    color: white;
+    border: 1px solid $failure;
+  }
+}
+
+// -------- Form - Error mark --------
+
+.ErrorForm-Errormark {
+  margin: 1rem auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: white;
+  stroke-miterlimit: 10;
+  box-shadow: inset 0px 0px 0px $failure;
+  animation: errorFill 0.4s ease-in-out 0.4s forwards,
+    errorScale 0.3s ease-in-out 0.9s both;
+}
+
+.ErrorForm-Errormark-Circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: $failure;
+  fill: none;
+  animation: errorStroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.ErrorForm-Errormark-X {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 29;
+  stroke-dashoffset: 29;
+  animation: errorStroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+@keyframes errorStroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes errorScale {
+  0%,
+  100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+@keyframes errorFill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px $failure;
+  }
+}
+
+// -------- Form - Input Fields --------
+.sm--inquiry__form .form-group.sm--inquiry__form-fields-fade {
+  transition: $transition-smooth-normal;
+  opacity: 0;
+}
