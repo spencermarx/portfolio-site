@@ -4,7 +4,10 @@ import Loading from './Loading';
 import CompletedForm from './CompletedForm';
 import ErrorForm from './ErrorForm';
 import axios from 'axios';
-import './contactform.scss'
+import './contactform.scss';
+
+const qs = require('qs');
+
 
 
 class ContactForm extends Component {
@@ -40,8 +43,14 @@ class ContactForm extends Component {
             email: email,
             message: message,
         };
+        const data = {
+            method: 'POST',
+            headers: { 'content-type': 'application/x-www-form-urlencoded' },
+            data: qs.stringify(formObject),
+            url: '/',
+          };
 
-        this.sendFormWithAxios(formObject);
+        this.sendFormWithAxios(data);
 
         event.preventDefault();
     }
@@ -58,7 +67,7 @@ class ContactForm extends Component {
                     <div className="ContactForm-Wrapper">
                         <Form
                             className="ContactForm-Form"
-                            method="post"
+                            method="POST"
                             name="inquiryForm"
                             netlify-honeypot="bot-field"
                             data-netlify="true"
@@ -68,72 +77,72 @@ class ContactForm extends Component {
                             ) : this.state.complete ? (
                                 <CompletedForm />
                             ) : this.state.error ? (
-                                <ErrorForm handleReset={this.handleReset}/>
+                                <ErrorForm handleReset={this.handleReset} />
                             ) : (
-                                <div>
-                                    <input type="hidden" name="bot-field" />
-                                    <Row>
-                                        <Col xs={12} md={6}>
-                                            <Form.Control
-                                                id="ContactForm-FirstName"
-                                                className="ContactForm-Form-Input"
-                                                name="firstName"
-                                                placeholder="First name *"
-                                                value={this.state.value}
-                                                onChange={this.handleChange}
-                                                required
-                                            />
-                                        </Col>
-                                        <Col xs={12} md={6}>
-                                            <Form.Control
-                                                id="ContactForm-LastName"
-                                                className="ContactForm-Form-Input"
-                                                name="lastName"
-                                                placeholder="Last name *"
-                                                value={this.state.value}
-                                                onChange={this.handleChange}
-                                                required />
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col>
-                                            <Form.Control
-                                                id="ContactForm-Email"
-                                                className="ContactForm-Form-Input"
-                                                name="email"
-                                                type="email"
-                                                placeholder="Enter email *"
-                                                value={this.state.value}
-                                                onChange={this.handleChange}
-                                                required />
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col>
-                                            <Form.Control
-                                                id="ContactForm-Message"
-                                                className="ContactForm-Form-Input"
-                                                name="message"
-                                                as="textarea"
-                                                rows="3"
-                                                placeholder="How can I help you?"
-                                                value={this.state.value}
-                                                onChange={this.handleChange} />
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col className="d-flex justify-content-center">
-                                            <Button
-                                                variant="dark"
-                                                className="ContactForm-Button"
-                                                type="submit"
-                                                value="Submit">
-                                                Send Message
+                                            <div>
+                                                <input type="hidden" name="bot-field" />
+                                                <Row>
+                                                    <Col xs={12} md={6}>
+                                                        <Form.Control
+                                                            id="ContactForm-FirstName"
+                                                            className="ContactForm-Form-Input"
+                                                            name="firstName"
+                                                            placeholder="First name *"
+                                                            value={this.state.value}
+                                                            onChange={this.handleChange}
+                                                            required
+                                                        />
+                                                    </Col>
+                                                    <Col xs={12} md={6}>
+                                                        <Form.Control
+                                                            id="ContactForm-LastName"
+                                                            className="ContactForm-Form-Input"
+                                                            name="lastName"
+                                                            placeholder="Last name *"
+                                                            value={this.state.value}
+                                                            onChange={this.handleChange}
+                                                            required />
+                                                    </Col>
+                                                </Row>
+                                                <Row>
+                                                    <Col>
+                                                        <Form.Control
+                                                            id="ContactForm-Email"
+                                                            className="ContactForm-Form-Input"
+                                                            name="email"
+                                                            type="email"
+                                                            placeholder="Enter email *"
+                                                            value={this.state.value}
+                                                            onChange={this.handleChange}
+                                                            required />
+                                                    </Col>
+                                                </Row>
+                                                <Row>
+                                                    <Col>
+                                                        <Form.Control
+                                                            id="ContactForm-Message"
+                                                            className="ContactForm-Form-Input"
+                                                            name="message"
+                                                            as="textarea"
+                                                            rows="3"
+                                                            placeholder="How can I help you?"
+                                                            value={this.state.value}
+                                                            onChange={this.handleChange} />
+                                                    </Col>
+                                                </Row>
+                                                <Row>
+                                                    <Col className="d-flex justify-content-center">
+                                                        <Button
+                                                            variant="dark"
+                                                            className="ContactForm-Button"
+                                                            type="submit"
+                                                            value="Submit">
+                                                            Send Message
                             </Button>
-                                        </Col>
-                                    </Row>
-                                </div>
-                            )}
+                                                    </Col>
+                                                </Row>
+                                            </div>
+                                        )}
                         </Form>
                     </div>
                 </section>
@@ -141,9 +150,9 @@ class ContactForm extends Component {
         )
     }
 
-    sendFormWithAxios(formObject) {
+    sendFormWithAxios(data) {
         this.setState({ loading: true })
-        axios.post('/', formObject)
+        axios.post(data)
             .then((result) => {
                 console.log("Success!");
                 console.log(result);
