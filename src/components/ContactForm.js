@@ -149,10 +149,10 @@ class ContactForm extends Component {
 
     sendFormWithFetch(formObject) {
         this.setState({ loading: true })
-        fetch("/contact/", {
+        fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encode({"form-name": "contact", ...formObject})
+            body: encode({"form-name": "inquiryForm", ...formObject})
           })
             .then((result) => {
                 console.log("Success!");
