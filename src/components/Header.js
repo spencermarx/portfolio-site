@@ -12,11 +12,12 @@ class Header extends Component {
         super(props);
         this.state = {
             isActive: false,
-            isScrolled: false,
-            prevScrollpos: window.pageYOffset,
+            isScrolled: false
         };
 
         this.handleClick = this.handleClick.bind(this);
+        this.handleScroll = this.handleScroll.bind(this);
+
     }
 
     //   Handle Toggler Click
@@ -39,16 +40,13 @@ class Header extends Component {
 
     // Hide or show the menu.
     handleScroll = () => {
-        const currentScrollPos = window.pageYOffset;
-        const isScrolled = currentScrollPos > 80;
 
-        // console.log("Pos:", scrollPos);
-        // console.log("Check:", isScrolled);
+        if (!this.state.isScrolled && (window.scrollY > 80)) {
+            this.setState({ isScrolled: true });
+        } else if(window.scrollY <= 80){
+            this.setState({ isScrolled: false })
+        }
 
-        this.setState({
-            prevScrollpos: currentScrollPos,
-            isScrolled
-        });
     };
 
 
