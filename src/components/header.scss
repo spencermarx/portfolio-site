@@ -12,13 +12,12 @@
   top: 0;
   z-index: 100;
   transition: $transition-smooth-normal;
-  // position: fixed;
 }
 
 .Navbar.Is-Active {
   background-color: white;
   box-shadow: $shadow-normal;
-  animation: expandNavbar 350ms ease-in;
+  animation: expandNavbar normal 350ms ease-in;
 }
 
 @keyframes expandNavbar {
@@ -39,7 +38,7 @@
   background-color: white;
   box-shadow: $shadow-normal;
   opacity: 1;
-  animation: scrolledNavbar 450ms ease-in;
+  animation: scrolledNavbar normal 450ms ease-in;
 }
 
 @keyframes scrolledNavbar {
@@ -62,7 +61,7 @@
 }
 
 .Header-Links {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: black;
   margin: auto 1.2rem;
   transition: $transition-smooth-fast;
