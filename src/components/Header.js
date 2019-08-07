@@ -12,7 +12,8 @@ class Header extends Component {
         super(props);
         this.state = {
             isActive: false,
-            isScrolled: false
+            isScrolled: false,
+            prevScrollStatus: false
         };
 
         this.handleClick = this.handleClick.bind(this);
@@ -41,12 +42,11 @@ class Header extends Component {
     // Hide or show the menu.
     handleScroll = () => {
 
-        if (!this.state.isScrolled && (window.scrollY > 80)) {
-            this.setState({ isScrolled: true });
-        } else if(window.scrollY <= 80){
-            this.setState({ isScrolled: false })
+        let currentScrollStatus = (window.scrollY > 100);
+        if (this.state.prevScrollStatus !== currentScrollStatus) {
+            this.setState({ isScrolled: currentScrollStatus });
+            this.setState({prevScrollStatus: currentScrollStatus});
         }
-
     };
 
 
