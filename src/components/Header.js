@@ -16,6 +16,7 @@ class Header extends Component {
         };
 
         this.handleClick = this.handleClick.bind(this);
+        this.handleScroll = this.handleScroll.bind(this);
     }
 
     //   Handle Toggler Click
@@ -28,21 +29,21 @@ class Header extends Component {
     // Scrolling State Change
     componentDidMount() {
         // Select Scroll
-        const navigation = document.querySelector('.Navbar');
-        window.addEventListener('scroll', () => {
-            const isScrolled = window.scrollY > navigation.clientHeight;
-            if (!isScrolled) {
-                this.setState({ isScrolled: false });
-            } else {
-                this.setState({ isScrolled: true });
-            }
-        }, true);
+        window.addEventListener('scroll', this.handleScroll, true);
     }
 
     componentWillUnmount() {
-        window.removeEventListener('scroll');
+        window.removeEventListener('scroll', this.handleScroll);
     }
 
+    handleScroll = e => {
+        if (window.scrollY >= 80) {
+            this.setState({ isScrolled: true })
+
+        } else {
+            this.setState({ isScrolled: false })
+        }
+    }
 
     render() {
         let isActive;
