@@ -29,13 +29,17 @@ const Skills = () => {
         <React.Fragment>
             <section id="Skills">
                 <Row>
-                    {skillCards.map(edge =>
-                        <Col xs={12} sm={6} lg={3} className="d-flex justify-content-center">
-                            <SkillCard
-                                title={edge.node.title}
-                                image={edge.node.image}
-                                skills={edge.node.skills} />
-                        </Col>
+                    {skillCards.map((edge, i) => {
+                        return (
+                            <Col xs={12} sm={6} lg={3} className="d-flex justify-content-center" key={edge.node.title}>
+                                <SkillCard
+                                    title={edge.node.title}
+                                    image={edge.node.image}
+                                    skills={edge.node.skills}
+                                     />
+                            </Col>
+                        )
+                    }
                     )}
                 </Row>
             </section>

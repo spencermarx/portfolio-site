@@ -30,8 +30,9 @@ class ProjectCard extends Component {
         const { githubLink } = this.props;
         const { websiteLink } = this.props;
         const { themeColor } = this.props;
+        const key = projectTitle;
         return (
-            <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
+            <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal" key={key}>
                 <Card className="ProjectCard" key="front" onMouseEnter={this.onHover}>
                     <ProjectThumbnail fluid={fluid} />
                     <Card.Body className="text-center">
@@ -43,9 +44,9 @@ class ProjectCard extends Component {
                     <Card.Body className="ProjectCard-Tech">
                         <h4 className="ProjectCard-Tech text-center" style={{color: themeColor}}>{technologyLabel}</h4>
                         <Row>
-                            {technologies.map(tech =>
-                                <Col xs={5} className="ProjectCard-Tech-Wrapper" style={{background: themeColor, color:'#FFF'}}>
-                                    <p className="ProjectCard-Tech-Name text-center">{tech}</p>
+                            {technologies.map((tech, i) =>
+                                <Col xs={5} className="ProjectCard-Tech-Wrapper" style={{background: themeColor, color:'#FFF'}} key={tech}>
+                                    <p className="ProjectCard-Tech-Name text-center" key={tech}>{tech}</p>
                                 </Col>
                             )}
                         </Row>

@@ -60,7 +60,7 @@ const Projects = () => {
                         justification = getJustification(itemIndex);
 
                         // Return final Project Card
-                        return(<Col xs={12} md={6} className={`d-flex justify-content-center ${justification} my-4`}>
+                        return(<Col xs={12} md={6} className={`d-flex justify-content-center ${justification} my-4`} key={edge.node.projectTitle}>
                             <ProjectCard
                                 projectType={edge.node.projectType}
                                 projectTitle={edge.node.projectTitle}
