@@ -3,12 +3,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Header';
 import Footer from './Footer';
 import './layout.scss';
-class Layout extends Component{
-    render(){
-        return(
+class Layout extends Component {
+    render() {
+        return (
             <React.Fragment>
                 <Header />
-                {this.props.children}
+                <main className="Layout-MainContent">
+                    {this.props.children}
+                </main>
                 <Footer />
             </React.Fragment>
         )

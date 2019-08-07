@@ -5,6 +5,57 @@
   src: url("../fonts/PermanentMarker-Regular.ttf");
 }
 
+.Navbar {
+  background-color: transparent;
+  position: absolute; //To avoid page shifting on scrolling state change
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  transition: $transition-smooth-normal;
+  // position: fixed;
+}
+
+.Navbar.Is-Active {
+  background-color: white;
+  box-shadow: $shadow-normal;
+  animation: expandNavbar 350ms ease-in;
+}
+
+@keyframes expandNavbar {
+  0% {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  50% {
+    background-color: white;
+    box-shadow: $shadow-normal;
+  }
+}
+
+.Navbar.Is-Scrolled {
+  width: 100%; // Fit width to  full screen width
+  top: 0;
+  position: fixed; // Fix  to top of page
+  background-color: white;
+  box-shadow: $shadow-normal;
+  opacity: 1;
+  animation: scrolledNavbar 450ms ease-in;
+}
+
+@keyframes scrolledNavbar {
+  0% {
+    top: -80px;
+    background-color: white;
+    opacity: 0.4;
+    box-shadow: none;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    box-shadow: $shadow-normal;
+  }
+}
+
 .Header-Logo {
   font-family: "Permanent Marker", sans-serif;
   font-size: 2rem;
@@ -15,9 +66,27 @@
   color: black;
   margin: auto 1.2rem;
   transition: $transition-smooth-fast;
+  text-align: center;
 
   &:hover {
     color: rgb(110, 110, 110);
     text-decoration: none;
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .Header-Links {
+    text-align: right;
+  }
+}
+
+.Navbar-Toggle {
+  margin-top: 0.5rem;
+  outline: none;
+  border: none;
+
+  &:focus {
+    outline: none;
+    border: none;
   }
 }
