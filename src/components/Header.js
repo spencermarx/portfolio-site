@@ -13,6 +13,7 @@ class Header extends Component {
         this.state = {
             isActive: false,
             isScrolled: false,
+            prevScrollpos: window.pageYOffset,
         };
 
         this.handleClick = this.handleClick.bind(this);
@@ -25,23 +26,30 @@ class Header extends Component {
         }));
     }
 
-    // Scrolling State Change
+    // FIXME: Start here ->
+    // Adds an event listener when the component is mount.
     componentDidMount() {
-        // Select Scroll
-        const navigation = document.querySelector('.Navbar');
-        window.addEventListener('scroll', () => {
-            const isScrolled = window.scrollY > navigation.clientHeight;
-            if (!isScrolled) {
-                this.setState({ isScrolled: false });
-            } else {
-                this.setState({ isScrolled: true });
-            }
-        }, true);
+        window.addEventListener("scroll", this.handleScroll);
     }
 
+    // Remove the event listener when the component is unmount.
     componentWillUnmount() {
-        window.removeEventListener('scroll');
+        window.removeEventListener("scroll", this.handleScroll);
     }
+
+    // Hide or show the menu.
+    handleScroll = () => {
+        const currentScrollPos = window.pageYOffset;
+        const isScrolled = currentScrollPos > 80;
+
+        // console.log("Pos:", scrollPos);
+        // console.log("Check:", isScrolled);
+
+        this.setState({
+            prevScrollpos: currentScrollPos,
+            isScrolled
+        });
+    };
 
 
     render() {
