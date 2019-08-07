@@ -1,0 +1,166 @@
+@charset "UTF-8";
+@import "./layout.scss";
+
+// ======================
+// Hamburgers
+// ======================
+
+// Default Settings
+$Hamburger-padding-x: 8px !default;
+$Hamburger-padding-y: 8px !default;
+$Hamburger-layer-width: 30px !default;
+$Hamburger-layer-height: 3px !default;
+$Hamburger-layer-spacing: 6px !default;
+$Hamburger-layer-color: #000 !default;
+$Hamburger-layer-scroll-color: $primary !default;
+$Hamburger-layer-border-radius: 4px !default;
+$Hamburger-hover-opacity: 0.7 !default;
+$Hamburger-active-layer-color: $Hamburger-hover-opacity !default;
+$Hamburger-active-hover-opacity: $Hamburger-hover-opacity !default;
+$Hamburger-hover-use-filter: false !default;
+$Hamburger-hover-filter: opacity(50%) !default;
+$Hamburger-active-hover-filter: $Hamburger-hover-filter !default;
+
+// Types of Hamburgers
+$Hamburger-types: (squeeze) !default;
+
+// Base Hamburger
+// Hamburger
+// ==================================================
+.Hamburger {
+  padding: $Hamburger-padding-y $Hamburger-padding-x;
+  display: inline-block;
+  cursor: pointer;
+
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+
+  // Normalize (<button>)
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+
+  &:hover {
+    @if $Hamburger-hover-use-filter == true {
+      filter: $Hamburger-hover-filter;
+    } @else {
+      opacity: $Hamburger-hover-opacity;
+    }
+  }
+
+  &.Is-Active {
+    &:hover {
+      @if $Hamburger-hover-use-filter == true {
+        filter: $Hamburger-active-hover-filter;
+      } @else {
+        opacity: $Hamburger-active-hover-opacity;
+      }
+    }
+
+    .Hamburger-inner,
+    .Hamburger-inner::before,
+    .Hamburger-inner::after {
+      background-color: $Hamburger-active-layer-color;
+    }
+  }
+}
+
+.Hamburger-box {
+  width: $Hamburger-layer-width;
+  height: $Hamburger-layer-height * 3 + $Hamburger-layer-spacing * 2;
+  display: inline-block;
+  position: relative;
+}
+
+.Hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: $Hamburger-layer-height / -2;
+
+  &,
+  &::before,
+  &::after {
+    width: $Hamburger-layer-width;
+    height: $Hamburger-layer-height;
+    background-color: $Hamburger-layer-color;
+    border-radius: $Hamburger-layer-border-radius;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+  }
+
+  &::before {
+    top: ($Hamburger-layer-spacing + $Hamburger-layer-height) * -1;
+  }
+
+  &::after {
+    bottom: ($Hamburger-layer-spacing + $Hamburger-layer-height) * -1;
+  }
+}
+
+.sm--navbar__scrolled .Hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: $Hamburger-layer-height / -2;
+
+  &,
+  &::before,
+  &::after {
+    background-color: $Hamburger-layer-scroll-color;
+  }
+}
+
+// Hamburger type
+@if index($Hamburger-types, squeeze) {
+  /*
+     * Squeeze
+     */
+  .Hamburger-Squeeze {
+    .Hamburger-inner {
+      transition-duration: 0.075s;
+      transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+      &::before {
+        transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+      }
+
+      &::after {
+        transition: bottom 0.075s 0.12s ease,
+          transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      }
+    }
+
+    &.Is-Active {
+      .Hamburger-inner {
+        transform: rotate(45deg);
+        transition-delay: 0.12s;
+        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+        &::before {
+          top: 0;
+          opacity: 0;
+          transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+        }
+
+        &::after {
+          bottom: 0;
+          transform: rotate(-90deg);
+          transition: bottom 0.075s ease,
+            transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+      }
+    }
+  }
+}
