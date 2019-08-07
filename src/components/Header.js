@@ -13,10 +13,10 @@ class Header extends Component {
         this.state = {
             isActive: false,
             isScrolled: false,
+            prevScrollpos: window.pageYOffset,
         };
 
         this.handleClick = this.handleClick.bind(this);
-        this.handleScroll = this.handleScroll.bind(this);
     }
 
     //   Handle Toggler Click
@@ -26,24 +26,31 @@ class Header extends Component {
         }));
     }
 
-    // Scrolling State Change
+    // FIXME: Start here ->
+    // Adds an event listener when the component is mount.
     componentDidMount() {
-        // Select Scroll
-        window.addEventListener('scroll', this.handleScroll, true);
+        window.addEventListener("scroll", this.handleScroll);
     }
 
+    // Remove the event listener when the component is unmount.
     componentWillUnmount() {
-        window.removeEventListener('scroll', this.handleScroll);
+        window.removeEventListener("scroll", this.handleScroll);
     }
 
-    handleScroll = e => {
-        if (window.scrollY >= 80) {
-            this.setState({ isScrolled: true })
+    // Hide or show the menu.
+    handleScroll = () => {
+        const currentScrollPos = window.pageYOffset;
+        const isScrolled = currentScrollPos > 80;
 
-        } else {
-            this.setState({ isScrolled: false })
-        }
-    }
+        // console.log("Pos:", scrollPos);
+        // console.log("Check:", isScrolled);
+
+        this.setState({
+            prevScrollpos: currentScrollPos,
+            isScrolled
+        });
+    };
+
 
     render() {
         let isActive;
