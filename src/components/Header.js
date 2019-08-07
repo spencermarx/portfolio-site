@@ -39,6 +39,7 @@ class Header extends Component {
 
     componentWillUnmount() {
         window.removeEventListener('scroll', this.handleScroll);
+        this.setState({ height: 0 });
     }
 
     // Get cross-browser scroll position for Y-axis
