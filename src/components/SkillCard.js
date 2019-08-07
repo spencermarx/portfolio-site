@@ -8,9 +8,10 @@ class SkillCard extends Component {
         const title = this.props.title;
         const imageURL = this.props.image.file.url;
         const skillArray = this.props.skills;
+        const key = title;
         return (
             <React.Fragment>
-                <Card className="SkillCard">
+                <Card className="SkillCard" key={key}>
                     <img
                         className="SkillCard-Image"
                         variant="top"
@@ -19,8 +20,8 @@ class SkillCard extends Component {
                     <Card.Body className="text-center">
                         <Card.Title className="SkillCard-Title">{title}</Card.Title>
                         <ul className="SkillCard-Skills">
-                            {skillArray.map(skill =>
-                                <p className="mb-2 text-muted">{skill}</p>
+                            {skillArray.map((skill) =>
+                                <p className="mb-2 text-muted" key={skill}>{skill}</p>
                             )}
                         </ul>
                     </Card.Body>
