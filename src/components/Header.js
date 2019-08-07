@@ -22,26 +22,26 @@ class Header extends Component {
     }
 
     //   Handle Toggler Click
-    handleClick(event) {
-        this.setState(state => ({
-            isActive: !state.isActive
-        }));
+    handleClick() {
+        if(!this.state.isActive){
+            this.setState({isActive: true});
+        } else {
+            this.setState({isActive: false});
+        }
     }
 
-    // FIXME: Start here ->
-    // Adds an event listener when the component is mount.
+    // Adds an event listener when the component is mounted
     componentDidMount() {
         window.addEventListener("scroll", this.handleScroll);
     }
 
-    // Remove the event listener when the component is unmount.
+    // Remove the event listener when the component is unmounted
     componentWillUnmount() {
         window.removeEventListener("scroll", this.handleScroll);
     }
 
-    // Hide or show the menu.
+    //  Show the navbar on scroll
     handleScroll = () => {
-
         let currentScrollStatus = (window.scrollY > 100);
         if (this.state.prevScrollStatus !== currentScrollStatus) {
             this.setState({ isScrolled: currentScrollStatus });
