@@ -15,14 +15,10 @@ class Header extends Component {
             isScrolled: false,
             prevScrollStatus: false
         };
-
-        this.handleClick = this.handleClick.bind(this);
-        this.handleScroll = this.handleScroll.bind(this);
-
     }
 
     //   Handle Toggler Click
-    handleClick() {
+    handleClick = () => {
         if(!this.state.isActive){
             this.setState({isActive: true});
         } else {
@@ -51,6 +47,8 @@ class Header extends Component {
 
 
     render() {
+        this.handleClick = this.handleClick.bind(this);
+        this.handleScroll = this.handleScroll.bind(this);
         let isActive;
         let isScrolled;
         if (this.state.isActive) {
