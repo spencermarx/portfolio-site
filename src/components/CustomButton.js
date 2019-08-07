@@ -39,7 +39,7 @@ class CustomButton extends Component {
                 color: '#FFF',
             }
             finalStyle = { ...defaultButtonStyle , ...hoverStyle, };
-            console.log(finalStyle)
+            // console.log(finalStyle)
         } else {
             finalStyle = defaultButtonStyle;
         }
