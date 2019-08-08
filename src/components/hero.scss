@@ -18,17 +18,33 @@
 
 // -------- Hero Text - Div  --------
 .Hero-Text {
-  max-width: 700px; // Constrain text
+  max-width: 375px; // Constrain text
   padding-left: 0.75rem; // Set spacing...
   padding-right: 0.75rem;
+}
+@media (min-width: $breakpoint-md) {
+  .Hero-Text {
+    max-width: 700px; // Constrain text
+  }
 }
 
 // -------- Hero Text Header - h1 --------
 .Hero-Text-Header {
   margin-bottom: 1rem; // Set spacing
+  font-size: 1.75rem;
+}
+@media (min-width: $breakpoint-md) {
+  .Hero-Text-Header {
+    font-size: 2.5rem;
+  }
 }
 
 // -------- Hero Text SubHeader - p --------
 .Hero-Text-SubHeader {
-  font-size: 1.3rem; // Set font-size
+  font-size: 1.1rem; // Set font-size
+}
+@media (min-width: $breakpoint-md) {
+  .Hero-Text-SubHeader {
+    font-size: 1.3rem;
+  }
 }
