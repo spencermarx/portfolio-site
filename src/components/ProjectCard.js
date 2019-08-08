@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Card, Row, Col } from 'react-bootstrap';
 import ProjectThumbnail from './ProjectThumbnail';
 import CustomButton from './CustomButton';
-import ReactCardFlip from 'react-card-flip';
+import CardFlip from './CardFlip';
 import './projectcard.scss';
 
 
@@ -10,12 +10,25 @@ class ProjectCard extends Component {
     constructor() {
         super();
         this.state = {
-            isFlipped: false
+            isFlipped: false,
+            isHovered: false,
+            front: true,
+            back: false,
         };
         this.onHover = this.onHover.bind(this);
+        this.onClick = this.onClick.bind(this);
     }
 
     onHover(e) {
+        e.preventDefault();
+        console.log("Is hovering")
+        this.setState(prevState => ({ isHovered: !prevState.isHovered }));
+        this.setState(prevState => ({ front: !prevState.front }));
+        this.setState(prevState => ({ back: !prevState.back }));
+        console.log("Hover State:", this.state.isHovered)
+    }
+
+    onClick(e) {
         e.preventDefault();
         this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
     }
@@ -31,16 +44,36 @@ class ProjectCard extends Component {
         const { websiteLink } = this.props;
         const { themeColor } = this.props;
         const key = projectTitle;
+
+        let isHovered;
+
+        if (this.state.isHovered) {
+            isHovered = 'Is-Hovered';
+        } else {
+            isHovered = '';
+        }
         return (
-            <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal" key={key}>
-                <Card className="ProjectCard" key="front" onMouseEnter={this.onHover}>
+            <CardFlip
+                isFlipped={this.state.isFlipped}
+                flipDirection="horizontal"
+                key={key}
+                onMouseEnter={this.onHover}
+                onMouseLeave={this.onHover}
+                addClassName={isHovered}>
+                <Card
+                    className={`ProjectCard`}
+                    key="front"
+                    onClick={this.onClick} >
                     <ProjectThumbnail fluid={fluid} />
                     <Card.Body className="text-center">
                         <Card.Title className="ProjectCard-Title">{projectType}</Card.Title>
                         <Card.Subtitle className="ProjectCard-Title">{projectTitle}</Card.Subtitle>
                     </Card.Body>
                 </Card>
-                <Card className="ProjectCard" key="back" onMouseLeave={this.onHover}>
+                <Card
+                    className={`ProjectCard`}
+                    key="back"
+                    onClick={this.onClick} >
                     <Card.Body className="ProjectCard-Tech">
                         <h4 className="ProjectCard-Tech text-center" style={{ color: themeColor }}>{technologyLabel}</h4>
                         <Row>
@@ -96,7 +129,7 @@ class ProjectCard extends Component {
                             )}
                     </Card.Body>
                 </Card>
-            </ReactCardFlip>
+            </CardFlip>
         )
     }
 }

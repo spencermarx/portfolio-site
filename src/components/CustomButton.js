@@ -8,10 +8,25 @@ class CustomButton extends Component {
         this.state = {
             hover: false
         }
+
+        this.onHover = this.onHover.bind(this);
+        this.onClick = this.onClick.bind(this);
     }
 
-    toggleHover = () => {
+    onHover(e){
+        e.preventDefault();
         this.setState({ hover: !this.state.hover })
+    }
+
+    onClick(link, target){
+        return( e => {
+            console.log("Event:", e);
+            console.log("Link:", link);
+            console.log("Target:", target);
+            e.preventDefault();
+            e.stopPropagation();
+            window.open(link, target)
+        })
     }
 
     render() {
@@ -52,8 +67,9 @@ class CustomButton extends Component {
                     href={link}
                     target={target}
                     style={finalStyle}
-                    onMouseEnter={this.toggleHover}
-                    onMouseLeave={this.toggleHover}
+                    onMouseEnter={this.onHover}
+                    onMouseLeave={this.onHover}
+                    onClick={this.onClick(link, target)}
                 >
                     {this.props.children}
                 </Button>

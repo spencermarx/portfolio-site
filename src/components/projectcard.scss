@@ -1,7 +1,16 @@
+@import "./layout.scss";
+
 .ProjectCard {
   width: 350px;
   height: 375px;
   border-radius: 0;
+  transition: $transition-smooth-normal;
+}
+
+.Is-Hovered {
+  transition: $transition-smooth-normal;
+  transform: scale(1.02);
+  cursor: pointer;
 }
 
 .ProjectCard-Image {
