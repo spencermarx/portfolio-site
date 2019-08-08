@@ -11,18 +11,19 @@ class Header extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isActive: false,
-            isScrolled: false,
+            isActive: '',
+            isScrolled: '',
             prevScrollStatus: false
         };
     }
 
     //   Handle Toggler Click
     handleClick = () => {
-        if(!this.state.isActive){
-            this.setState({isActive: true});
+        console.log("handleClick:", this.state.isActive)
+        if(this.state.isActive === ''){
+            this.setState({isActive: 'Is-Active'});
         } else {
-            this.setState({isActive: false});
+            this.setState({isActive: ''});
         }
     }
 
@@ -40,8 +41,12 @@ class Header extends Component {
     handleScroll = () => {
         let currentScrollStatus = (window.scrollY > 100);
         if (this.state.prevScrollStatus !== currentScrollStatus) {
-            this.setState({ isScrolled: currentScrollStatus });
             this.setState({prevScrollStatus: currentScrollStatus});
+            if(currentScrollStatus){
+                this.setState({ isScrolled: 'Is-Scrolled' });
+            } else {
+                this.setState({ isScrolled: '' });
+            }
         }
     };
 
@@ -49,23 +54,13 @@ class Header extends Component {
     render() {
         this.handleClick = this.handleClick.bind(this);
         this.handleScroll = this.handleScroll.bind(this);
-        let isActive;
-        let isScrolled;
-        if (this.state.isActive) {
-            isActive = 'Is-Active';
-        } else {
-            isActive = '';
-        }
-        if (this.state.isScrolled) {
-            isScrolled = 'Is-Scrolled';
-        } else {
-            isScrolled = '';
-        }
+
+
         return (
             <React.Fragment>
                 <SiteMetaData />
                 <Navbar
-                    className={`Navbar ${isActive} ${isScrolled}`}
+                    className={`Navbar ${this.state.isActive} ${this.state.isScrolled}`}
                     expand="lg">
                     <Container>
                         <Link to="/" className="Header-Logo">
@@ -76,7 +71,7 @@ class Header extends Component {
                             aria-controls="basic-navbar-nav"
                             onClick={this.handleClick}
                         >
-                            <Hamburger isActive={isActive} />
+                            <Hamburger isActive={this.state.isActive} />
                         </Navbar.Toggle>
                         <Navbar.Collapse
                             className="Navbar-Collapse"
