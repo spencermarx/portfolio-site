@@ -42,41 +42,58 @@ class ProjectCard extends Component {
                 </Card>
                 <Card className="ProjectCard" key="back" onMouseLeave={this.onHover}>
                     <Card.Body className="ProjectCard-Tech">
-                        <h4 className="ProjectCard-Tech text-center" style={{color: themeColor}}>{technologyLabel}</h4>
+                        <h4 className="ProjectCard-Tech text-center" style={{ color: themeColor }}>{technologyLabel}</h4>
                         <Row>
                             {technologies.map((tech, i) =>
-                                <Col xs={5} className="ProjectCard-Tech-Wrapper" style={{background: themeColor, color:'#FFF'}} key={tech}>
+                                <Col xs={5} className="ProjectCard-Tech-Wrapper" style={{ background: themeColor, color: '#FFF' }} key={tech}>
                                     <p className="ProjectCard-Tech-Name text-center" key={tech}>{tech}</p>
                                 </Col>
                             )}
                         </Row>
-                    <p className="ProjectCard-Short-Description text-center mt-3 mb-4">{shortDescription}</p>
-                    <Row>
-                        <Col xs={6} className="d-flex justify-content-center">
-                            <CustomButton
-                            classNameProp="ProjectCard-Button text-center"
-                            link={githubLink}
-                            target="_blank"
-                            color={themeColor}
-                            themeColor={themeColor}
-                            border= "2px solid"
-                            borderColor={themeColor}
-                            fill="none"
-                            >View Source</CustomButton>
-                        </Col>
-                        <Col xs={6} className="d-flex justify-content-center">
-                            <CustomButton
-                            classNameProp="ProjectCard-Button text-center"
-                            link={websiteLink}
-                            target="_blank"
-                            color={themeColor}
-                            themeColor={themeColor}
-                            border= "2px solid"
-                            borderColor={themeColor}
-                            fill="none"
-                            >Visit Site</CustomButton>
-                        </Col>
-                    </Row>
+                        <p className="ProjectCard-Short-Description text-center mt-3 mb-4">{shortDescription}</p>
+                        {technologyLabel === 'Technology' ? (
+                            <Row>
+                                <Col xs={6} className="d-flex justify-content-center">
+                                    <CustomButton
+                                        classNameProp="ProjectCard-Button text-center"
+                                        link={githubLink}
+                                        target="_blank"
+                                        color={themeColor}
+                                        themeColor={themeColor}
+                                        border="2px solid"
+                                        borderColor={themeColor}
+                                        fill="none"
+                                    >View Source</CustomButton>
+                                </Col>
+                                <Col xs={6} className="d-flex justify-content-center">
+                                    <CustomButton
+                                        classNameProp="ProjectCard-Button text-center"
+                                        link={websiteLink}
+                                        target="_blank"
+                                        color={themeColor}
+                                        themeColor={themeColor}
+                                        border="2px solid"
+                                        borderColor={themeColor}
+                                        fill="none"
+                                    >View Project</CustomButton>
+                                </Col>
+                            </Row>
+                        ) : (
+                                <Row>
+                                    <Col xs={12} className="d-flex justify-content-center">
+                                        <CustomButton
+                                            classNameProp="ProjectCard-Button text-center"
+                                            link={websiteLink}
+                                            target="_blank"
+                                            color={themeColor}
+                                            themeColor={themeColor}
+                                            border="2px solid"
+                                            borderColor={themeColor}
+                                            fill="none"
+                                        >View Project</CustomButton>
+                                    </Col>
+                                </Row>
+                            )}
                     </Card.Body>
                 </Card>
             </ReactCardFlip>
