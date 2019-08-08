@@ -1,0 +1,34 @@
+// ======================
+// Hero Component
+// ======================
+
+//Include default layout styles
+@import "./layout.scss";
+
+// -------- Section --------
+.Hero {
+  margin: 8rem auto 6rem; // Set spacing for Hero section
+}
+
+@media (min-width: $breakpoint-lg) {
+  .Hero {
+    margin: 12rem auto 6rem; // Set larger spacing on large+ screens
+  }
+}
+
+// -------- Hero Text - Div  --------
+.Hero-Text {
+  max-width: 700px; // Constrain text
+  padding-left: 0.75rem; // Set spacing...
+  padding-right: 0.75rem;
+}
+
+// -------- Hero Text Header - h1 --------
+.Hero-Text-Header {
+  margin-bottom: 1rem; // Set spacing
+}
+
+// -------- Hero Text SubHeader - p --------
+.Hero-Text-SubHeader {
+  font-size: 1.3rem; // Set font-size
+}
