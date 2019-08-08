@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
+import './hero.scss';
 
 class Hero extends Component {
     render() {
         return (
             <React.Fragment>
-                <section id="Hero">
-                    <div className="my-5 text-left">
-                        <h1>Hi, my name is Spencer.<br />I'm a Full Stack Developer living in Boston, MA.</h1>
-                        <p>Background in UX Design and Geographic Information Science. Currently considering new work opportunities building innovative digital experiences</p>
+                <section id="Hero" className="Hero">
+                    <div className="Hero-Text">
+                        <h1 className="Hero-Text-Header" >Hi, I'm Spencer.<br />
+                        I'm a <strong>Full Stack Developer</strong><br/>
+                         living in Boston.</h1>
+                        <p className="Hero-Text-SubHeader">Background in UX Design and Geographic Information Science. Currently considering new work opportunities building impactful digital experiences.</p>
                     </div>
                 </section>
             </React.Fragment>
