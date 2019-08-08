@@ -17,19 +17,24 @@
 .Navbar.Is-Active {
   background-color: white;
   box-shadow: $shadow-normal;
-  animation: expandNavbar normal 350ms ease-in;
+  transition: 300ms ease-in;
+  // animation: expandNavbar normal 350ms ease-in;
 }
 
-@keyframes expandNavbar {
-  0% {
-    background-color: transparent;
-    box-shadow: none;
-  }
-  50% {
-    background-color: white;
-    box-shadow: $shadow-normal;
-  }
-}
+// @keyframes expandNavbar {
+//   0% {
+//     background-color: transparent;
+//     box-shadow: none;
+//   }
+//   50% {
+//     background-color: white;
+//     box-shadow: $shadow-normal;
+//   }
+//   100% {
+//     background-color: white;
+//     box-shadow: $shadow-normal;
+//   }
+// }
 
 .Navbar.Is-Scrolled {
   width: 100%; // Fit width to  full screen width
