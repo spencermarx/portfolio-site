@@ -1,5 +1,11 @@
+// ======================
+// Skillcard Component
+// ======================
+
+//Include default layout styles
 @import "./layout.scss";
 
+// -------- ProjectCard - Div --------
 .ProjectCard {
   width: 350px;
   height: 375px;
@@ -8,22 +14,42 @@
   box-shadow: $shadow-normal;
 }
 
-.Is-Hovered {
+// -------- State-based CardFlip - Div --------
+.react-card-flip.Is-Hovered {
   transition: $transition-smooth-normal;
   transform: scale(1.02);
   cursor: pointer;
 }
 
+// -------- Project Type- h5 --------
+.ProjectCard-Type {
+  font-weight: bold;
+}
+
+// -------- Project Image- Image --------
 .ProjectCard-Image {
   object-fit: cover;
 }
 
+// -------- Project Tech Wrapper- Div --------
 .ProjectCard-Tech-Wrapper {
   height: 30px;
   color: white;
   margin: 0.5rem auto;
+  padding: 0.2rem;
 }
 
+// -------- Project Tech Title- h4 --------
+.ProjectCard-Tech {
+  font-weight: bold;
+}
+
+// -------- Project Tech Names- p --------
+.ProjectCard-Tech-Name {
+  color: white;
+}
+
+// -------- Project Button - Button --------
 .ProjectCard-Button {
   width: 140px;
 }

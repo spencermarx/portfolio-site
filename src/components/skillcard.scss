@@ -15,6 +15,7 @@
   box-shadow: $shadow-normal;
   animation: bobbing 5s ease-in-out infinite;
 }
+// -------- Bobbing - Animation --------
 @keyframes bobbing {
   0% {
     transform: translatey(0px);
@@ -29,7 +30,7 @@
 
 @for $i from 0 through 3 {
   .SkillCard-Card-#{$i} {
-    animation-delay: 250ms * $i;
+    animation-delay: 250ms * $i; //Staggered delay based on card #
   }
 }
 
@@ -38,6 +39,11 @@
   width: 115px;
   height: 115px;
   margin: auto;
+}
+
+// -------- Skillcard Image - SVG --------
+.SkillCard-Title {
+  font-weight: bold;
 }
 
 // -------- Skillcard Skills - Ul --------

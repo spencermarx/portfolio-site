@@ -85,7 +85,7 @@ class CardFlip extends React.Component {
         height: '100%',
         transition: `${flipSpeedFrontToBack}s`,
         ...back
-      }
+      },
     };
 
     return (
