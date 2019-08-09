@@ -66,7 +66,7 @@ class ProjectCard extends Component {
                     onClick={this.onClick} >
                     <ProjectThumbnail fluid={fluid} />
                     <Card.Body className="text-center">
-                        <Card.Title className="ProjectCard-Title">{projectType}</Card.Title>
+                        <Card.Title className="ProjectCard-Type">{projectType}</Card.Title>
                         <Card.Subtitle className="ProjectCard-Title">{projectTitle}</Card.Subtitle>
                     </Card.Body>
                 </Card>
@@ -74,7 +74,7 @@ class ProjectCard extends Component {
                     className={`ProjectCard`}
                     key="back"
                     onClick={this.onClick} >
-                    <Card.Body className="ProjectCard-Tech">
+                    <Card.Body>
                         <h4 className="ProjectCard-Tech text-center" style={{ color: themeColor }}>{technologyLabel}</h4>
                         <Row>
                             {technologies.map((tech, i) =>

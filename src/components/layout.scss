@@ -7,16 +7,13 @@
 // ======================
 
 $primary: #000000;
-$primary-hover: #197fc4;
-$secondary: #37b5ff;
-$secondary-hover: #64c6ff;
+$primary-hover: #2c2c2c;
+$secondary: #6e6e6e;
+$secondary-hover: #8f8f8f;
 $light: #f8f8f8;
-$gray: #6e6e6e;
-$dark: #1d2731;
 $success: $primary;
 $failure: #db6565;
 $failure-hover: #db8080;
-$active-link: white;
 
 // ======================
 // Breakpoints
@@ -47,10 +44,49 @@ $transition-smooth-fast: 150ms ease-in;
 $shadow-normal: 0px 2px 8px rgba(0, 0, 0, 0.25);
 
 // ======================
+// Import Fonts
+// ======================
+
+@font-face {
+  font-family: "Permanent Marker";
+  src: url("../fonts/PermanentMarker-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-ExtraLight.ttf");
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-ExtraLightItalic.ttf");
+  font-weight: lighter;
+  font-style: italic;
+}
+
+// ======================
 // Global Rules
 // ======================
+
 body {
-  color: $dark;
+  color: $primary;
+  font-family: "Poppins";
 }
 
 section {
@@ -69,11 +105,11 @@ ul {
 }
 
 a {
-  color: $dark;
+  color: $primary;
   transition: $transition-smooth-normal;
 
   &:hover {
-    color: $gray;
+    color: $secondary;
     cursor: pointer;
     text-decoration: none;
   }
@@ -81,4 +117,8 @@ a {
 
 main {
   margin-top: 5rem;
+}
+
+p {
+  color: $secondary;
 }
