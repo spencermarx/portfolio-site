@@ -31,7 +31,7 @@ const Skills = () => {
                 <Row>
                     {skillCards.map((edge, i) => {
                         return (
-                            <Col xs={12} sm={6} lg={3} className="d-flex justify-content-center" key={edge.node.title}>
+                            <Col xs={6} lg={3} className="d-flex justify-content-center" key={edge.node.title}>
                                 <SkillCard
                                     title={edge.node.title}
                                     image={edge.node.image}
