@@ -1,15 +1,46 @@
+// ======================
+// Skillcard Component
+// ======================
+
+//Include default layout styles
+@import "./layout.scss";
+
+// -------- Skillcard - Div --------
 .SkillCard {
+  position: relative;
   margin: 2rem auto;
   width: 200px;
   height: 320px;
   border-radius: 0;
+  box-shadow: $shadow-normal;
+  animation: bobbing 5s ease-in-out infinite;
 }
+@keyframes bobbing {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-10px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+@for $i from 0 through 3 {
+  .SkillCard-Card-#{$i} {
+    animation-delay: 250ms * $i;
+  }
+}
+
+// -------- Skillcard Image - SVG --------
 .SkillCard-Image {
   width: 115px;
   height: 115px;
   margin: auto;
 }
 
+// -------- Skillcard Skills - Ul --------
 .SkillCard-Skills {
   margin-block-start: 0px;
   margin-block-end: 0px;

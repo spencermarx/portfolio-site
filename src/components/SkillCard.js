@@ -9,11 +9,12 @@ class SkillCard extends Component {
         const imageURL = this.props.image.file.url;
         const skillArray = this.props.skills;
         const key = title;
+        const { index }= this.props
         return (
             <React.Fragment>
-                <Card className="SkillCard" key={key}>
+                <Card className={`SkillCard SkillCard-Card-${index}`} key={key}>
                     <img
-                        className="SkillCard-Image"
+                        className="SkillCard-Image "
                         variant="top"
                         src={imageURL}
                         alt="Icon" />
