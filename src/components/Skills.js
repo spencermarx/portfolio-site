@@ -36,6 +36,7 @@ const Skills = () => {
                                     title={edge.node.title}
                                     image={edge.node.image}
                                     skills={edge.node.skills}
+                                    index={i}
                                      />
                             </Col>
                         )

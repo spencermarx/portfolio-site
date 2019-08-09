@@ -1,0 +1,39 @@
+// ======================
+// Hero Component
+// ======================
+
+//Include default layout styles
+@import "./layout.scss";
+
+// -------- Titles - Span --------
+.TypedTitles {
+}
+
+// -------- Cursor --------
+/*Add custom cursor so it auto inherits font styles*/
+.TypedTitles::after {
+  content: "|";
+  display: inline;
+  -webkit-animation: blink 1s infinite;
+  -moz-animation: blink 1s infinite;
+  animation: blink 1s infinite;
+}
+
+/*Removes cursor that comes with typed.js*/
+.typed-cursor {
+  opacity: 0;
+  display: none;
+}
+
+/*Custom cursor animation*/
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
