@@ -70,7 +70,7 @@ const Projects = () => {
                                 technologies={edge.node.technologies}
                                 shortDescription={edge.node.shortDescription.shortDescription}
                                 githubLink={edge.node.githubLink}
-                                websiteLink={edge.node.websiteLink}
+                                slug={edge.node.slug}
                             />
                         </Col>)
                         }
