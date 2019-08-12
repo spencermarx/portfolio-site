@@ -1,5 +1,11 @@
+// ======================
+// Skillcard Component
+// ======================
+
+//Include default layout styles
 @import "./layout.scss";
 
+// -------- Navbar - Div --------
 .Navbar {
   background-color: transparent;
   position: absolute; //To avoid page shifting on scrolling state change
@@ -13,23 +19,23 @@
   background-color: white;
   box-shadow: $shadow-normal;
   transition: 300ms ease-in;
-  // animation: expandNavbar normal 350ms ease-in;
+  animation: expandNavbar forwards 350ms ease-in;
 }
 
-// @keyframes expandNavbar {
-//   0% {
-//     background-color: transparent;
-//     box-shadow: none;
-//   }
-//   50% {
-//     background-color: white;
-//     box-shadow: $shadow-normal;
-//   }
-//   100% {
-//     background-color: white;
-//     box-shadow: $shadow-normal;
-//   }
-// }
+@keyframes expandNavbar {
+  0% {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  50% {
+    background-color: white;
+    box-shadow: $shadow-normal;
+  }
+  100% {
+    background-color: white;
+    box-shadow: $shadow-normal;
+  }
+}
 
 .Navbar.Is-Scrolled {
   width: 100%; // Fit width to  full screen width
@@ -38,7 +44,7 @@
   background-color: white;
   box-shadow: $shadow-normal;
   opacity: 1;
-  animation: scrolledNavbar normal 450ms ease-in;
+  animation: scrolledNavbar forwards 450ms ease-in;
 }
 
 @keyframes scrolledNavbar {
