@@ -62,7 +62,7 @@ class CustomButton extends Component {
         return (
             <React.Fragment>
                 {target === '_blank' ? (
-                    <Link
+                    <button
                         className={`btn ${classNameProp}`}
                         to={link}
                         style={finalStyle}
@@ -71,7 +71,7 @@ class CustomButton extends Component {
                         onClick={this.onClick(link,target)}
                     >
                         {this.props.children}
-                    </Link>
+                    </button>
                 ) : (
                         <Link
                             className={`btn ${classNameProp}`}

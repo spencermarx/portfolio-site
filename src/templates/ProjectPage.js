@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { Row, Col } from 'react-bootstrap';
+import CustomButton from '../components/CustomButton'
 import Layout from '../components/Layout';
 import './projectpage.scss'
 
@@ -30,9 +31,8 @@ export const query = graphql`
     technologies
     highlightsLabel
     highlights
-    shortDescription {
-      shortDescription
-    }
+    githubLink
+    websiteLink
     longDescription {
       longDescription
     }
@@ -54,6 +54,8 @@ const ProjectPage = (props) => {
     const { highlightsLabel } = data;
     const { highlights } = data;
     const { longDescription } = data.longDescription;
+    const { githubLink } = data;
+    const { websiteLink } = data;
     const heroImage = data.heroImage.fluid;
 
     const pageStyle = {
@@ -79,7 +81,7 @@ const ProjectPage = (props) => {
                 <Img className="Project-Hero" fluid={heroImage} alt="Project hero" />
                 <h5 className="Project-Type text-center" style={pageStyle.headerText}>{projectType}</h5>
                 <h1 className="Project-Title text-center" style={pageStyle.headerText}>{projectTitle}</h1>
-                <div  className="Project-Container">
+                <div className="Project-Container">
                     <Row className="Project-Data justify-content-center">
                         <Col xs={12} md={5} className="Project-Data-Column">
                             <h6 className="Project-Info font-weight-bold" style={pageStyle.headerText}>Project Info</h6>
@@ -130,6 +132,38 @@ const ProjectPage = (props) => {
                             <span style={pageStyle.firstLetter}>{longDescription.slice(0, 1)}</span>{longDescription.slice(1, longDescription.length)}
                         </p>
                     </div>
+                    {websiteLink.length > 0 ? (
+                        <div className="Project-Buttons">
+                            <Row>
+                                <Col xs={6} className="d-flex justify-content-center justify-content-md-end">
+                                    <CustomButton
+                                        classNameProp="ProjectCard-Button text-center"
+                                        link={githubLink}
+                                        target="_blank"
+                                        color={themeColor}
+                                        themeColor={themeColor}
+                                        border="2px solid"
+                                        borderColor={themeColor}
+                                        fill="none"
+                                    >View Source</CustomButton>
+                                </Col>
+                                <Col xs={6} className="d-flex justify-content-center justify-content-md-start">
+                                    <CustomButton
+                                        classNameProp="ProjectCard-Button text-center"
+                                        link={websiteLink}
+                                        target="_blank"
+                                        color={themeColor}
+                                        themeColor={themeColor}
+                                        border="2px solid"
+                                        borderColor={themeColor}
+                                        fill="none"
+                                    >Visit Website</CustomButton>
+                                </Col>
+                            </Row>
+                        </div>
+                    ) : (
+                            null
+                    )}
                     <div>
                         <h6 className="Project-Images font-weight-bold" style={pageStyle.headerText}>Deliverables</h6>
                         <div>Image Carousel</div>

@@ -37,6 +37,7 @@
 .Project-Container {
   max-width: 700px;
   margin: auto;
+  padding: 1rem;
 }
 
 // -------- Project Highlights - Div --------
@@ -67,5 +68,10 @@
 // -------- Project Description - p --------
 .Project-Description {
   max-width: 700px;
+  margin: 3rem auto;
+}
+
+// -------- Project Buttons - Link --------
+.Project-Buttons {
   margin: 3rem auto;
 }
