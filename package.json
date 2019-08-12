@@ -7,7 +7,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "./node_modules/.bin/env-cmd -f .env gatsby develop",
-    "mobile-dev": "./node_modules/.bin/env-cmd -f .env gatsby develop -H 169.254.16.82 -p 8000",
+    "mobile-dev": "./node_modules/.bin/env-cmd -f .env gatsby develop -H 169.254.216.58 -p 8000",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
