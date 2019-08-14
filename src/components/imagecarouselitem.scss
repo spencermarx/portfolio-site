@@ -1,0 +1,124 @@
+// ======================
+// Image Carousel Item Component
+// ======================
+
+//Include default layout styles
+@import "../components/layout.scss";
+
+// -------- Image Carousel Image Wrapper - Div --------
+.ImageCarousel-Item {
+  height: 100%;
+  width: 100%;
+}
+
+// -------- Image Carousel Image Wrapper - Div --------
+.ImageCarousel-Image-Wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+}
+
+// -------- Image Carousel Image  - Image --------
+.ImageCarousel-Image {
+  height: 100%;
+  width: 100%;
+
+  picture > img {
+    object-fit: contain !important;
+  }
+}
+
+// -------- Image Carousel Metadata  - Div --------
+.ImageCarousel-Item-Info {
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+// -------- Image Carousel Info & Image  - Divs --------
+.ImageCarousel-Item-Info,
+.ImageCarousel-Item-Image,
+.ImageCarousel-Image-Wrapper {
+  height: 100%; //Set height of container for Image and Info
+}
+
+// -------- Image Carousel Metadata  - Div --------
+.ImageCarousel-Image-Metadata {
+  background: white;
+  padding: 1rem;
+  width: 100%;
+  color: $secondary;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+// -------- Image Carousel Metadata  - Div --------
+.ImageCarousel-Image-Metadata-Title {
+  font-weight: bold;
+}
+
+// -------- Image Carousel Buttons - Button --------
+.ImageCarousel-Item-Controls {
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  display: block;
+}
+
+// -------- Image Carousel Buttons - Button --------
+.ImageCarousel-Item-Buttons {
+  margin: auto;
+  width: 6rem;
+  justify-content: center;
+  display: flex;
+  position: relative;
+  bottom: 20px;
+}
+
+// -------- Image Carousel Buttons - Button --------
+.ImageCarousel-Item-Button {
+  font-size: 2rem;
+  line-height: 2rem;
+  position: relative;
+  text-align: center;
+  margin: 0;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  background: transparent;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  transition: $transition-smooth-normal;
+
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+@keyframes clicked {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// -------- Image Carousel Back Button - Button --------
+.ImageCarousel-Item-Button-Back {
+  border-radius: 4px 0 0 4px;
+  border-right: 0;
+  border-left: 2px solid;
+}
+
+// -------- Image Carousel Forward Button - Button --------
+.ImageCarousel-Item-Button-Forward {
+  border-radius: 0 4px 4px 0;
+  border-left: 0;
+  border-right: 2px solid;
+}

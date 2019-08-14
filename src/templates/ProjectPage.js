@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { Row, Col } from 'react-bootstrap';
 import CustomButton from '../components/CustomButton'
+import ImageCarousel from '../components/ImageCarousel'
 import Layout from '../components/Layout';
 import './projectpage.scss'
 
@@ -36,6 +37,11 @@ export const query = graphql`
     longDescription {
       longDescription
     }
+    projectMedia {
+        fluid(maxWidth: 1500){
+        ...GatsbyContentfulFluid
+            }
+    }
     themeColor
   }
 }
@@ -56,6 +62,8 @@ const ProjectPage = (props) => {
     const { longDescription } = data.longDescription;
     const { githubLink } = data;
     const { websiteLink } = data;
+    const { projectMedia } = data;
+    console.log(websiteLink)
     const heroImage = data.heroImage.fluid;
 
     const pageStyle = {
@@ -132,7 +140,7 @@ const ProjectPage = (props) => {
                             <span style={pageStyle.firstLetter}>{longDescription.slice(0, 1)}</span>{longDescription.slice(1, longDescription.length)}
                         </p>
                     </div>
-                    {websiteLink.length > 0 ? (
+                    {websiteLink && (websiteLink.length > 0)  ? (
                         <div className="Project-Buttons">
                             <Row>
                                 <Col xs={6} className="d-flex justify-content-center justify-content-md-end">
@@ -166,7 +174,7 @@ const ProjectPage = (props) => {
                     )}
                     <div>
                         <h6 className="Project-Images font-weight-bold" style={pageStyle.headerText}>Deliverables</h6>
-                        <div>Image Carousel</div>
+                        <ImageCarousel projectMedia={projectMedia} themeColor={themeColor}/>
                     </div>
                 </div>
             </Layout>

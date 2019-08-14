@@ -5,6 +5,11 @@
 //Include default layout styles
 @import "../components/layout.scss";
 
+// -------- Local Variables --------
+$container-width-lg: 900px;
+$container-width-md: 650px;
+$container-width-xs: 370px;
+
 // -------- Project Hero - Img --------
 .Project-Hero {
   top: 1rem;
@@ -35,9 +40,22 @@
 
 // -------- Project Container - Div --------
 .Project-Container {
-  max-width: 700px;
+  max-width: $container-width-xs;
   margin: auto;
-  padding: 1rem;
+  padding: 0.5rem;
+}
+@media (min-width: $breakpoint-md) {
+  .Project-Container {
+    max-width: $container-width-md;
+    padding: 1rem;
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .Project-Container {
+    max-width: $container-width-lg;
+    padding: 1rem;
+  }
 }
 
 // -------- Project Highlights - Div --------
@@ -67,7 +85,7 @@
 
 // -------- Project Description - p --------
 .Project-Description {
-  max-width: 700px;
+  max-width: 900px;
   margin: 3rem auto;
 }
 

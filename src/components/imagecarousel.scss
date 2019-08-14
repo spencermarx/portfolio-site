@@ -1,0 +1,15 @@
+// ======================
+// Image Carousel Component
+// ======================
+
+//Include default layout styles
+@import "../components/layout.scss";
+
+// -------- Image Carousel - Div --------
+.ImageCarousel {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  margin: 2rem auto;
+  box-shadow: $shadow-normal;
+}
