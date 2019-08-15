@@ -38,6 +38,8 @@ export const query = graphql`
       longDescription
     }
     projectMedia {
+        title
+        description
         fluid(maxWidth: 1500){
         ...GatsbyContentfulFluid
             }

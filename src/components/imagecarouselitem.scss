@@ -6,17 +6,25 @@
 @import "../components/layout.scss";
 
 // -------- Image Carousel Image Wrapper - Div --------
-.ImageCarousel-Item {
+.ImageCarousel-Item.row {
   height: 100%;
   width: 100%;
+  margin-right: 0;
+  margin-left: 0;
 }
 
 // -------- Image Carousel Image Wrapper - Div --------
 .ImageCarousel-Image-Wrapper {
   position: relative;
   width: 100%;
-  height: 100%;
-  padding: 1rem;
+  height: 280px;
+  padding: 2rem;
+}
+
+@media (min-width: $breakpoint-md) {
+  .ImageCarousel-Image-Wrapper {
+    height: 100%;
+  }
 }
 
 // -------- Image Carousel Image  - Image --------
@@ -33,13 +41,16 @@
 .ImageCarousel-Item-Info {
   flex-wrap: wrap;
   align-content: center;
+  height: 200px;
 }
 
-// -------- Image Carousel Info & Image  - Divs --------
-.ImageCarousel-Item-Info,
-.ImageCarousel-Item-Image,
-.ImageCarousel-Image-Wrapper {
-  height: 100%; //Set height of container for Image and Info
+@media (min-width: $breakpoint-md) {
+  // -------- Image Carousel Info & Image  - Divs --------
+  .ImageCarousel-Item-Info,
+  .ImageCarousel-Item-Image,
+  .ImageCarousel-Image-Wrapper {
+    height: 100%; //Set height of container for Image and Info
+  }
 }
 
 // -------- Image Carousel Metadata  - Div --------

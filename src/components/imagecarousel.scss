@@ -8,8 +8,15 @@
 // -------- Image Carousel - Div --------
 .ImageCarousel {
   width: 100%;
-  height: 400px;
+  height: 100%;
   position: relative;
   margin: 2rem auto;
   box-shadow: $shadow-normal;
+}
+
+@media (min-width: $breakpoint-md) {
+  .ImageCarousel {
+    width: 100%;
+    height: 400px;
+  }
 }

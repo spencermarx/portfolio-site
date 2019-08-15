@@ -60,10 +60,10 @@ $container-width-xs: 370px;
 
 // -------- Project Highlights - Div --------
 .Project-Highlights {
-  width: 500px;
+  width: 100%;
   background: white;
   box-shadow: $shadow-normal;
-  margin: auto;
+  margin: auto 15px;
   padding: 2rem 3rem;
 
   // List of highlights
@@ -75,6 +75,13 @@ $container-width-xs: 370px;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     padding-inline-start: 0px;
+  }
+}
+
+@media (min-width: $breakpoint-md) {
+  .Project-Highlights {
+    width: 500px;
+    margin: auto;
   }
 }
 
