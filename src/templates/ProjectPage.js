@@ -175,7 +175,7 @@ const ProjectPage = (props) => {
                             null
                     )}
                     <div>
-                        <h6 className="Project-Images font-weight-bold" style={pageStyle.headerText}>Deliverables</h6>
+                        <h6 className="Project-Images font-weight-bold text-center" style={pageStyle.headerText}>Deliverables</h6>
                         <ImageCarousel projectMedia={projectMedia} themeColor={themeColor}/>
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Img from "gatsby-image";
 import { Row, Col } from 'react-bootstrap';
+import Indicators from './Indicators';
 import './imagecarouselitem.scss';
 
 class ImageCarouselItem extends Component {
@@ -28,6 +29,7 @@ class ImageCarouselItem extends Component {
     render() {
         const { image } = this.props;
         const { active } = this.props;
+        const {activeImage} = this.props;
         const themeColor = this.props.style.color.color;
 
 
@@ -74,6 +76,10 @@ class ImageCarouselItem extends Component {
                                 onClick={this.handleClickBack}>
                                 {`<`}
                             </button>
+                            <Indicators
+                            number={4}
+                            activeIndicator={activeImage}
+                            themeColor={themeColor}/>
                             <button
                                 className="ImageCarousel-Item-Button ImageCarousel-Item-Button-Forward"
                                 style={styles.button}

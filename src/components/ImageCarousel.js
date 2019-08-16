@@ -66,11 +66,22 @@ class ImageCarousel extends Component {
                 {images.map((image, i) => {
                     if (i === this.state.activeImage) {
                         return (
-                            <ImageCarouselItem style={style} image={image} key={i} active={true} handleControlsClick={this.handleControlsClick}/>
+                            <ImageCarouselItem
+                            style={style}
+                            image={image}
+                            key={i}
+                            active={true}
+                            activeImage={this.state.activeImage}
+                            handleControlsClick={this.handleControlsClick}/>
                         )
                     } else {
                         return (
-                            <ImageCarouselItem style={style} image={image} key={i} active={false} />
+                            <ImageCarouselItem
+                            style={style}
+                            image={image}
+                            key={i}
+                            active={false}
+                            activeImage={this.state.activeImage} />
                         )
                     }
                 })}

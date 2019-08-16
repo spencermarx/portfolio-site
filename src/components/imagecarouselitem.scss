@@ -92,18 +92,16 @@
   line-height: 2rem;
   position: relative;
   text-align: center;
-  margin: 0;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  margin: auto 1rem;
   background: transparent;
-  border-top: 2px solid;
-  border-bottom: 2px solid;
+  border: none;
   transition: $transition-smooth-normal;
 
   &:focus {
     outline: none;
   }
   &:hover {
+    cursor: pointer;
     opacity: 0.7;
   }
 }
@@ -122,14 +120,8 @@
 
 // -------- Image Carousel Back Button - Button --------
 .ImageCarousel-Item-Button-Back {
-  border-radius: 4px 0 0 4px;
-  border-right: 0;
-  border-left: 2px solid;
 }
 
 // -------- Image Carousel Forward Button - Button --------
 .ImageCarousel-Item-Button-Forward {
-  border-radius: 0 4px 4px 0;
-  border-left: 0;
-  border-right: 2px solid;
 }
