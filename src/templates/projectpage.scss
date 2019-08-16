@@ -1,0 +1,132 @@
+// ======================
+// Skillcard Component
+// ======================
+
+//Include default layout styles
+@import "../components/layout.scss";
+
+// -------- Local Variables --------
+$container-width-lg: 900px;
+$container-width-md: 650px;
+$container-width-xs: 370px;
+
+// -------- Project Hero - Img --------
+.Project-Hero {
+  top: 1rem;
+  width: 100%;
+}
+// -------- Project Type - h5 --------
+.Project-Type {
+  margin-top: 2rem;
+}
+
+// -------- Project Data - Div --------
+.Project-Data {
+  margin: 0.5rem auto;
+  color: $secondary;
+  text-align: center;
+
+  // List of tech
+  ul {
+    list-style: none;
+    display: block;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+  }
+}
+
+@media (min-width: $breakpoint-md) {
+  // -------- Project Data - Div --------
+  .Project-Data {
+    margin: 1rem auto 3rem auto;
+    text-align: left;
+  }
+}
+
+// -------- Project Data Column - Div --------
+.Project-Data-Column {
+  margin: 1rem 1rem;
+}
+
+// -------- Project Container - Div --------
+.Project-Container {
+  max-width: $container-width-xs;
+  margin: auto;
+  padding: 0.5rem;
+}
+@media (min-width: $breakpoint-md) {
+  .Project-Container {
+    max-width: $container-width-md;
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .Project-Container {
+    max-width: $container-width-lg;
+  }
+}
+
+// -------- Project Highlights - Div --------
+.Project-Highlights-Row {
+  margin: 3rem auto;
+}
+// -------- Project Highlights - Div --------
+.Project-Highlights {
+  width: 100%;
+  background: white;
+  box-shadow: $shadow-normal;
+  margin: auto 15px;
+  padding: 2rem 3rem;
+
+  // List of highlights
+  ul {
+    list-style: none;
+    display: block;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+  }
+}
+
+@media (min-width: $breakpoint-md) {
+  .Project-Highlights {
+    width: 500px;
+    margin: auto;
+  }
+}
+
+// -------- Project Highlight - li --------
+.Project-Highlights-Highlight {
+  margin: 0.8rem auto;
+}
+
+// -------- Project Description - p --------
+.Project-Description {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: $breakpoint-md) {
+  .Project-Description {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+// -------- Project Buttons - Link --------
+.Project-Buttons {
+  margin: 1.5rem auto;
+}
+
+// -------- Project Buttons - Link --------
+.Project-Button-Wrapper {
+  padding-left: 0.1rem;
+  padding-right: 0.1rem;
+}

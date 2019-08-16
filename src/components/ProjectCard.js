@@ -41,7 +41,7 @@ class ProjectCard extends Component {
         const { technologies } = this.props;
         const { shortDescription } = this.props;
         const { githubLink } = this.props;
-        const { websiteLink } = this.props;
+        const { slug } = this.props;
         const { themeColor } = this.props;
         const key = projectTitle;
 
@@ -101,8 +101,8 @@ class ProjectCard extends Component {
                                 <Col xs={6} className="d-flex justify-content-center">
                                     <CustomButton
                                         classNameProp="ProjectCard-Button text-center"
-                                        link={websiteLink}
-                                        target="_blank"
+                                        link={`/project/${slug}`}
+                                        target="_self"
                                         color={themeColor}
                                         themeColor={themeColor}
                                         border="2px solid"
@@ -116,8 +116,8 @@ class ProjectCard extends Component {
                                     <Col xs={12} className="d-flex justify-content-center">
                                         <CustomButton
                                             classNameProp="ProjectCard-Button text-center"
-                                            link={websiteLink}
-                                            target="_blank"
+                                            link={`/project/${slug}`}
+                                            target="_self"
                                             color={themeColor}
                                             themeColor={themeColor}
                                             border="2px solid"

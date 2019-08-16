@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
+import { Link } from 'gatsby';
 
 
 class CustomButton extends Component {
@@ -10,16 +10,16 @@ class CustomButton extends Component {
         }
 
         this.onHover = this.onHover.bind(this);
-        this.onClick = this.onClick.bind(this);
+        // this.onClick = this.onClick.bind(this);
     }
 
-    onHover(e){
+    onHover(e) {
         e.preventDefault();
         this.setState({ hover: !this.state.hover })
     }
 
-    onClick(link, target){
-        return( e => {
+    onClick(link, target) {
+        return (e => {
             console.log("Event:", e);
             console.log("Link:", link);
             console.log("Target:", target);
@@ -53,7 +53,7 @@ class CustomButton extends Component {
                 backgroundColor: themeColor,
                 color: '#FFF',
             }
-            finalStyle = { ...defaultButtonStyle , ...hoverStyle, };
+            finalStyle = { ...defaultButtonStyle, ...hoverStyle, };
             // console.log(finalStyle)
         } else {
             finalStyle = defaultButtonStyle;
@@ -61,18 +61,28 @@ class CustomButton extends Component {
 
         return (
             <React.Fragment>
-                <Button
-                    className={classNameProp}
-                    variant="outline-primary"
-                    href={link}
-                    target={target}
-                    style={finalStyle}
-                    onMouseEnter={this.onHover}
-                    onMouseLeave={this.onHover}
-                    onClick={this.onClick(link, target)}
-                >
-                    {this.props.children}
-                </Button>
+                {target === '_blank' ? (
+                    <button
+                        className={`btn ${classNameProp}`}
+                        to={link}
+                        style={finalStyle}
+                        onMouseEnter={this.onHover}
+                        onMouseLeave={this.onHover}
+                        onClick={this.onClick(link,target)}
+                    >
+                        {this.props.children}
+                    </button>
+                ) : (
+                        <Link
+                            className={`btn ${classNameProp}`}
+                            to={link}
+                            style={finalStyle}
+                            onMouseEnter={this.onHover}
+                            onMouseLeave={this.onHover}
+                        >
+                            {this.props.children}
+                        </Link>
+                    )}
             </React.Fragment>
         )
     }

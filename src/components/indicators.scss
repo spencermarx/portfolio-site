@@ -1,0 +1,15 @@
+// ======================
+// Indicators Component
+// ======================
+
+//Include default layout styles
+@import "../components/layout.scss";
+
+// -------- Carousel Item Indicator - Img --------
+.Indicators {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  top: -0.15rem;
+}

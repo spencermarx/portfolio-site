@@ -1,0 +1,56 @@
+// ======================
+// Footer
+// ======================
+
+//Include default layout styles
+@import "./layout.scss";
+
+// -------- Footer Social Icon Wrapper --------
+.SocialIcon-Wrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border-width: 2px;
+  border-style: solid;
+  margin: auto 0.25rem;
+  position: relative;
+  overflow: hidden;
+  transition: $transition-smooth-normal;
+  cursor: pointer;
+
+  .SocialIcon path {
+    transition: $transition-smooth-normal;
+  }
+
+  // Set up psuedo-element
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+    z-index: 0;
+    transition: $transition-smooth-normal;
+  }
+
+  // On hover fill to top
+  &:hover {
+    // Change icon color to $primary
+    .SocialIcon path {
+      fill: white;
+    }
+    // psuedo-element position
+    &::after {
+      top: 0;
+    }
+  }
+}
+
+// -------- Footer Social Icon Wrapper --------
+.SocialIcon {
+  width: 30px;
+  height: 30px;
+  z-index: 10;
+}

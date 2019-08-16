@@ -1,0 +1,121 @@
+// ======================
+// Image Carousel Item Component
+// ======================
+
+//Include default layout styles
+@import "../components/layout.scss";
+
+// -------- Image Carousel Image Wrapper - Div --------
+.ImageCarousel-Item.row {
+  height: 100%;
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+// -------- Image Carousel Image Wrapper - Div --------
+.ImageCarousel-Image-Wrapper {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  padding: 2rem;
+}
+
+@media (min-width: $breakpoint-md) {
+  .ImageCarousel-Image-Wrapper {
+    height: 100%;
+  }
+}
+
+// -------- Image Carousel Image  - Image --------
+.ImageCarousel-Image {
+  height: 100%;
+  width: 100%;
+
+  picture > img {
+    object-fit: contain !important;
+  }
+}
+
+// -------- Image Carousel Metadata  - Div --------
+.ImageCarousel-Item-Info {
+  flex-wrap: wrap;
+  align-content: center;
+  height: 200px;
+}
+
+@media (min-width: $breakpoint-md) {
+  // -------- Image Carousel Info & Image  - Divs --------
+  .ImageCarousel-Item-Info,
+  .ImageCarousel-Item-Image,
+  .ImageCarousel-Image-Wrapper {
+    height: 100%; //Set height of container for Image and Info
+  }
+}
+
+// -------- Image Carousel Metadata  - Div --------
+.ImageCarousel-Image-Metadata {
+  background: white;
+  padding: 1rem;
+  width: 100%;
+  color: $secondary;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+// -------- Image Carousel Metadata  - Div --------
+.ImageCarousel-Image-Metadata-Title {
+  font-weight: bold;
+}
+
+// -------- Image Carousel Buttons - Button --------
+.ImageCarousel-Item-Controls {
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  display: block;
+}
+
+// -------- Image Carousel Buttons - Button --------
+.ImageCarousel-Item-Buttons {
+  margin: auto;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  position: relative;
+  bottom: 20px;
+  left: 0;
+}
+
+// -------- Image Carousel Buttons - Button --------
+.ImageCarousel-Item-Button {
+  font-size: 2rem;
+  line-height: 2rem;
+  position: relative;
+  text-align: center;
+  margin: auto 1rem;
+  background: transparent;
+  border: none;
+  transition: $transition-smooth-normal;
+
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+}
+
+@keyframes clicked {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
