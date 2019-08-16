@@ -72,6 +72,7 @@ class ImageCarousel extends Component {
                             key={i}
                             active={true}
                             activeImage={this.state.activeImage}
+                            totalImages={this.state.totalImages}
                             handleControlsClick={this.handleControlsClick}/>
                         )
                     } else {
@@ -81,7 +82,8 @@ class ImageCarousel extends Component {
                             image={image}
                             key={i}
                             active={false}
-                            activeImage={this.state.activeImage} />
+                            activeImage={this.state.activeImage}
+                            totalImages={this.state.totalImages} />
                         )
                     }
                 })}

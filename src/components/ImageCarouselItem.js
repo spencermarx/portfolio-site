@@ -30,6 +30,7 @@ class ImageCarouselItem extends Component {
         const { image } = this.props;
         const { active } = this.props;
         const {activeImage} = this.props;
+        const {totalImages} = this.props;
         const themeColor = this.props.style.color.color;
 
 
@@ -77,7 +78,7 @@ class ImageCarouselItem extends Component {
                                 {`<`}
                             </button>
                             <Indicators
-                            number={4}
+                            number={totalImages}
                             activeIndicator={activeImage}
                             themeColor={themeColor}/>
                             <button

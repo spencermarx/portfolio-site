@@ -1,29 +1,11 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'gatsby';
+import SocialIcon from './SocialIcon';
 import './footer.scss';
 
 
 class Footer extends Component {
-    constructor(props){
-        super(props)
-
-        this.handleClickEmail = this.handleClickEmail.bind(this);
-        this.handleClickLinkedIn = this.handleClickLinkedIn.bind(this);
-        this.handleClickGitHub = this.handleClickGitHub.bind(this);
-    }
-
-    handleClickEmail = () => {
-        window.location.href = 'mailto:spencer.s.marx@gmail.online?subject=Hi%20there!'
-    }
-
-    handleClickLinkedIn = () => {
-        window.open('https://www.linkedin.com/in/spencer-marx/', '_blank');
-    }
-
-    handleClickGitHub = () => {
-        window.open('https://github.com/spencermarx', '_blank')
-    }
 
     render() {
         return (
@@ -35,42 +17,14 @@ class Footer extends Component {
                                 <Link to="/">Spencer Marx</Link>
                             </Col>
                             <Col className="col-12 col-md-6">
-                                <div className="Footer_social-icons d-flex justify-content-center justify-content-md-end">
-                                    <span className="Footer_social-icon-wrapper d-flex justify-content-center align-items-center"
-                                        onClick={this.handleClickEmail}>
-                                        <svg className="Footer__social-icon" width="100" height="100" viewBox="0 0 100 100" fill="none"
-                                            alt="Email icon" xmlns="http://www.w3.org/2000/svg">
-                                            <g clipPath="url(#clip0)" fill="#000">
-                                                <path
-                                                    d="M25.759 40.96c.759.536 3.047 2.126 6.864 4.771 3.817 2.645 6.74 4.682 8.772 6.11.223.157.697.497 1.423 1.022.725.525 1.328.949 1.808 1.272.48.324 1.06.687 1.74 1.088a10.1 10.1 0 0 0 1.926.903c.603.202 1.161.302 1.674.302h.068c.513 0 1.071-.1 1.674-.302.602-.2 1.245-.502 1.925-.903.68-.402 1.261-.764 1.741-1.088.48-.323 1.082-.747 1.808-1.272.725-.525 1.2-.865 1.423-1.022 2.053-1.428 7.277-5.056 15.67-10.882a15.905 15.905 0 0 0 4.084-4.118C79.453 35.235 80 33.55 80 31.786c0-1.473-.53-2.735-1.59-3.784-1.061-1.049-2.317-1.573-3.767-1.573H25.357c-1.719 0-3.041.58-3.968 1.74C20.463 29.332 20 30.782 20 32.523c0 1.407.614 2.93 1.841 4.57 1.228 1.642 2.534 2.93 3.918 3.868z" />
-                                                <path
-                                                    d="M76.651 44.542c-7.32 4.955-12.879 8.806-16.673 11.552a79.074 79.074 0 0 1-3.097 2.193c-.793.524-1.847 1.06-3.164 1.607-1.317.547-2.544.82-3.683.82h-.067c-1.139 0-2.367-.273-3.684-.82-1.316-.547-2.371-1.083-3.163-1.607a79.312 79.312 0 0 1-3.097-2.193c-3.014-2.21-8.56-6.06-16.641-11.552A17.735 17.735 0 0 1 20 41.63v26.585c0 1.474.524 2.734 1.574 3.783 1.049 1.05 2.31 1.574 3.783 1.574h49.286c1.473 0 2.734-.524 3.784-1.574 1.049-1.05 1.573-2.31 1.573-3.783V41.63a18.457 18.457 0 0 1-3.349 2.912z" />
-                                            </g>
-                                            <defs>
-                                                <clipPath id="clip0">
-                                                    <path fill="#000" transform="translate(20 20)" d="M0 0h60v60H0z" />
-                                                </clipPath>
-                                            </defs>
-                                        </svg>
-                                    </span>
-                                    <span className="Footer_social-icon-wrapper d-flex justify-content-center align-items-center"
-                                        onClick={this.handleClickLinkedIn}>
-                                        <svg className="Footer__social-icon" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M35.9972 38.279H23.9256C23.3898 38.279 22.9557 38.7133 22.9557 39.2489V78.0299C22.9557 78.5657 23.3898 78.9998 23.9256 78.9998H35.9972C36.533 78.9998 36.9671 78.5657 36.9671 78.0299V39.2489C36.9671 38.7133 36.533 38.279 35.9972 38.279Z" fill="black" />
-                                            <path d="M29.9658 19C25.5734 19 22 22.5695 22 26.9571C22 31.3465 25.5734 34.9174 29.9658 34.9174C34.3547 34.9174 37.9252 31.3463 37.9252 26.9571C37.9254 22.5695 34.3547 19 29.9658 19Z" fill="black" />
-                                            <path d="M66.7023 37.3151C61.8539 37.3151 58.2698 39.3994 56.0959 41.7676V39.2489C56.0959 38.7133 55.6618 38.279 55.1261 38.279H43.5653C43.0296 38.279 42.5955 38.7133 42.5955 39.2489V78.0299C42.5955 78.5657 43.0296 78.9998 43.5653 78.9998H55.6106C56.1464 78.9998 56.5805 78.5657 56.5805 78.0299V58.8423C56.5805 52.3765 58.3367 49.8576 62.8439 49.8576C67.7527 49.8576 68.1428 53.8957 68.1428 59.175V78.0301C68.1428 78.5659 68.5769 79 69.1126 79H81.1624C81.6981 79 82.1322 78.5659 82.1322 78.0301V56.758C82.1322 47.1437 80.299 37.3151 66.7023 37.3151Z" fill="black" />
-                                        </svg>
-                                    </span>
-                                    <span className="Footer_social-icon-wrapper d-flex justify-content-center align-items-center"
-                                        onClick={this.handleClickGitHub}>
-                                        <svg className="Footer__social-icon" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M82.2431 45.3847C82.5474 43.4594 82.7372 41.3482 82.785 38.981C82.7667 28.8305 77.9076 25.2388 76.9727 23.5549C78.3496 15.864 76.7446 12.3657 75.9982 11.1681C73.2449 10.1908 66.4192 13.6904 62.6897 16.1539C56.6091 14.374 43.759 14.5477 38.94 16.6146C30.0487 10.248 25.3461 11.2188 25.3461 11.2188C25.3461 11.2188 22.3059 16.6705 24.5424 24.646C21.617 28.3739 19.4365 31.0096 19.4365 38.0008C19.4365 39.6752 19.5405 41.2574 19.717 42.7797C22.2363 56.0265 32.7328 61.7413 43.0433 62.7268C41.4918 63.9057 39.6291 66.1367 39.3714 68.7219C37.4219 69.9824 33.5003 70.399 30.4509 69.4403C26.1781 68.0902 24.5424 59.629 18.1438 60.836C16.7593 61.095 17.0345 62.0082 18.2334 62.7867C20.1828 64.0511 22.0188 65.6229 23.4339 68.9863C24.5208 71.5685 26.8069 76.179 34.0345 76.179C36.9038 76.179 38.9134 75.8399 38.9134 75.8399C38.9134 75.8399 38.9681 82.4199 38.9681 84.9863C38.9681 87.9396 34.9823 88.7689 34.9823 90.1857C34.9823 90.7492 36.3015 90.8027 37.3617 90.8027C39.4569 90.8027 43.8162 89.0575 43.8162 85.9879C43.8162 83.5486 43.8551 75.3516 43.8551 73.9161C43.8551 70.7795 45.536 69.7809 45.536 69.7809C45.536 69.7809 45.7417 86.5243 45.1315 88.769C44.4158 91.4089 43.1194 91.0338 43.1194 92.2086C43.1194 93.9618 48.3601 92.6373 50.0984 88.7997C51.4432 85.8023 50.841 69.3829 50.841 69.3829L52.243 69.3524C52.243 69.3524 52.2591 76.8723 52.2108 80.3078C52.1602 83.8661 51.7931 88.3645 53.9066 90.4876C55.2938 91.8839 59.5438 94.3341 59.5438 92.095C59.5438 90.7974 56.5676 89.725 56.5676 86.2094V70.0141C58.3757 70.0141 58.7493 75.3376 58.7493 75.3376L59.4011 85.2278C59.4011 85.2278 58.9683 88.8369 63.2998 90.343C64.8289 90.8786 68.1001 91.0242 68.2534 90.1253C68.4071 89.2241 64.3146 87.8915 64.2757 85.0981C64.2546 83.3969 64.3519 82.4011 64.3519 75.0011C64.3519 67.6052 63.3584 64.8692 59.8962 62.6889C69.9362 61.6585 80.3645 57.1747 82.2431 45.3847Z" fill="black" />
-                                        </svg>
-                                    </span>
+                                <div className="Footer-SocialIcons d-flex justify-content-center justify-content-md-end">
+                                    <SocialIcon icon='email' color='black'/>
+                                    <SocialIcon icon="github" color='black'/>
+                                    <SocialIcon icon="linkedIn" color='black'/>
                                 </div>
                             </Col>
                         </Row>
-                        <Row className="Footer__signature row mt-5">
+                        <Row className="Footer-Signature row mt-5">
                             <Col className="text-center">
                                 <p className="my-0">© 2018 All Rights Reserved | Spencer Marx</p>
                             </Col>

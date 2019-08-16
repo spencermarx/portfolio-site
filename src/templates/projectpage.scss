@@ -15,11 +15,16 @@ $container-width-xs: 370px;
   top: 1rem;
   width: 100%;
 }
+// -------- Project Type - h5 --------
+.Project-Type {
+  margin-top: 1rem;
+}
 
 // -------- Project Data - Div --------
 .Project-Data {
-  margin: 3rem auto;
+  margin: 0.5rem auto;
   color: $secondary;
+  text-align: center;
 
   // List of tech
   ul {
@@ -33,9 +38,17 @@ $container-width-xs: 370px;
   }
 }
 
+@media (min-width: $breakpoint-md) {
+  // -------- Project Data - Div --------
+  .Project-Data {
+    margin: 1rem auto 3rem auto;
+    text-align: left;
+  }
+}
+
 // -------- Project Data Column - Div --------
 .Project-Data-Column {
-  margin: 0 1rem;
+  margin: 1rem 1rem;
 }
 
 // -------- Project Container - Div --------
@@ -58,6 +71,10 @@ $container-width-xs: 370px;
   }
 }
 
+// -------- Project Highlights - Div --------
+.Project-Highlights-Row {
+  margin: 3rem auto;
+}
 // -------- Project Highlights - Div --------
 .Project-Highlights {
   width: 100%;
@@ -94,6 +111,15 @@ $container-width-xs: 370px;
 .Project-Description {
   max-width: 900px;
   margin: 3rem auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: $breakpoint-md) {
+  .Project-Description {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 // -------- Project Buttons - Link --------

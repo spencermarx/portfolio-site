@@ -73,17 +73,19 @@
   width: 100%;
   position: absolute;
   bottom: 10px;
+  left: 0;
   display: block;
 }
 
 // -------- Image Carousel Buttons - Button --------
 .ImageCarousel-Item-Buttons {
   margin: auto;
-  width: 6rem;
+  width: 100%;
   justify-content: center;
   display: flex;
   position: relative;
   bottom: 20px;
+  left: 0;
 }
 
 // -------- Image Carousel Buttons - Button --------
@@ -116,12 +118,4 @@
   100% {
     transform: scale(1);
   }
-}
-
-// -------- Image Carousel Back Button - Button --------
-.ImageCarousel-Item-Button-Back {
-}
-
-// -------- Image Carousel Forward Button - Button --------
-.ImageCarousel-Item-Button-Forward {
 }

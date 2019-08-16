@@ -91,6 +91,38 @@ const ProjectPage = (props) => {
                 <Img className="Project-Hero" fluid={heroImage} alt="Project hero" />
                 <h5 className="Project-Type text-center" style={pageStyle.headerText}>{projectType}</h5>
                 <h1 className="Project-Title text-center" style={pageStyle.headerText}>{projectTitle}</h1>
+                {websiteLink && (websiteLink.length > 0) ? (
+                    <div className="Project-Buttons">
+                        <Row>
+                            <Col xs={6} className="d-flex justify-content-center justify-content-md-end">
+                                <CustomButton
+                                    classNameProp="ProjectCard-Button text-center"
+                                    link={githubLink}
+                                    target="_blank"
+                                    color={themeColor}
+                                    themeColor={themeColor}
+                                    border="2px solid"
+                                    borderColor={themeColor}
+                                    fill="none"
+                                >View Source</CustomButton>
+                            </Col>
+                            <Col xs={6} className="d-flex justify-content-center justify-content-md-start">
+                                <CustomButton
+                                    classNameProp="ProjectCard-Button text-center"
+                                    link={websiteLink}
+                                    target="_blank"
+                                    color={themeColor}
+                                    themeColor={themeColor}
+                                    border="2px solid"
+                                    borderColor={themeColor}
+                                    fill="none"
+                                >Visit Website</CustomButton>
+                            </Col>
+                        </Row>
+                    </div>
+                ) : (
+                        null
+                    )}
                 <div className="Project-Container">
                     <Row className="Project-Data justify-content-center">
                         <Col xs={12} md={5} className="Project-Data-Column">
@@ -127,7 +159,7 @@ const ProjectPage = (props) => {
                             </Row>
                         </Col>
                     </Row>
-                    <Row>
+                    <Row className="Project-Highlights-Row">
                         <div className="Project-Highlights">
                             <h6 className="Project-Highlights-Title font-weight-bold text-center" style={pageStyle.headerText}>{highlightsLabel}</h6>
                             <ul>
@@ -137,46 +169,14 @@ const ProjectPage = (props) => {
                             </ul>
                         </div>
                     </Row>
-                    <div>
+                    <div className="Project-Description-Wrapper">
                         <p className="Project-Description">
                             <span style={pageStyle.firstLetter}>{longDescription.slice(0, 1)}</span>{longDescription.slice(1, longDescription.length)}
                         </p>
                     </div>
-                    {websiteLink && (websiteLink.length > 0)  ? (
-                        <div className="Project-Buttons">
-                            <Row>
-                                <Col xs={6} className="d-flex justify-content-center justify-content-md-end">
-                                    <CustomButton
-                                        classNameProp="ProjectCard-Button text-center"
-                                        link={githubLink}
-                                        target="_blank"
-                                        color={themeColor}
-                                        themeColor={themeColor}
-                                        border="2px solid"
-                                        borderColor={themeColor}
-                                        fill="none"
-                                    >View Source</CustomButton>
-                                </Col>
-                                <Col xs={6} className="d-flex justify-content-center justify-content-md-start">
-                                    <CustomButton
-                                        classNameProp="ProjectCard-Button text-center"
-                                        link={websiteLink}
-                                        target="_blank"
-                                        color={themeColor}
-                                        themeColor={themeColor}
-                                        border="2px solid"
-                                        borderColor={themeColor}
-                                        fill="none"
-                                    >Visit Website</CustomButton>
-                                </Col>
-                            </Row>
-                        </div>
-                    ) : (
-                            null
-                    )}
                     <div>
                         <h6 className="Project-Images font-weight-bold text-center" style={pageStyle.headerText}>Deliverables</h6>
-                        <ImageCarousel projectMedia={projectMedia} themeColor={themeColor}/>
+                        <ImageCarousel projectMedia={projectMedia} themeColor={themeColor} />
                     </div>
                 </div>
             </Layout>
