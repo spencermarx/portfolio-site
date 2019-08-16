@@ -17,7 +17,7 @@ $container-width-xs: 370px;
 }
 // -------- Project Type - h5 --------
 .Project-Type {
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 // -------- Project Data - Div --------
@@ -60,14 +60,12 @@ $container-width-xs: 370px;
 @media (min-width: $breakpoint-md) {
   .Project-Container {
     max-width: $container-width-md;
-    padding: 1rem;
   }
 }
 
 @media (min-width: $breakpoint-lg) {
   .Project-Container {
     max-width: $container-width-lg;
-    padding: 1rem;
   }
 }
 
@@ -124,5 +122,11 @@ $container-width-xs: 370px;
 
 // -------- Project Buttons - Link --------
 .Project-Buttons {
-  margin: 3rem auto;
+  margin: 1.5rem auto;
+}
+
+// -------- Project Buttons - Link --------
+.Project-Button-Wrapper {
+  padding-left: 0.1rem;
+  padding-right: 0.1rem;
 }

@@ -2,8 +2,8 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { Row, Col } from 'react-bootstrap';
-import CustomButton from '../components/CustomButton'
 import ImageCarousel from '../components/ImageCarousel'
+import SocialIcon from '../components/SocialIcon'
 import Layout from '../components/Layout';
 import './projectpage.scss'
 
@@ -94,29 +94,11 @@ const ProjectPage = (props) => {
                 {websiteLink && (websiteLink.length > 0) ? (
                     <div className="Project-Buttons">
                         <Row>
-                            <Col xs={6} className="d-flex justify-content-center justify-content-md-end">
-                                <CustomButton
-                                    classNameProp="ProjectCard-Button text-center"
-                                    link={githubLink}
-                                    target="_blank"
-                                    color={themeColor}
-                                    themeColor={themeColor}
-                                    border="2px solid"
-                                    borderColor={themeColor}
-                                    fill="none"
-                                >View Source</CustomButton>
+                            <Col xs={6} className="Project-Button-Wrapper d-flex justify-content-end">
+                                <SocialIcon icon="github-special" color={themeColor} link={githubLink}/>
                             </Col>
-                            <Col xs={6} className="d-flex justify-content-center justify-content-md-start">
-                                <CustomButton
-                                    classNameProp="ProjectCard-Button text-center"
-                                    link={websiteLink}
-                                    target="_blank"
-                                    color={themeColor}
-                                    themeColor={themeColor}
-                                    border="2px solid"
-                                    borderColor={themeColor}
-                                    fill="none"
-                                >Visit Website</CustomButton>
+                            <Col xs={6} className="Project-Button-Wrapper d-flex justify-content-start">
+                            <SocialIcon icon="externalSite" color={themeColor} link={websiteLink}/>
                             </Col>
                         </Row>
                     </div>

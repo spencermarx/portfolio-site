@@ -19,7 +19,7 @@ class Footer extends Component {
                             <Col className="col-12 col-md-6">
                                 <div className="Footer-SocialIcons d-flex justify-content-center justify-content-md-end">
                                     <SocialIcon icon='email' color='black'/>
-                                    <SocialIcon icon="github" color='black'/>
+                                    <SocialIcon icon="github-default" color='black'/>
                                     <SocialIcon icon="linkedIn" color='black'/>
                                 </div>
                             </Col>
