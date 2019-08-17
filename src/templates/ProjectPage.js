@@ -90,7 +90,7 @@ const ProjectPage = (props) => {
     // Process Highlights String
     let highlightsFinalArray = [];
     const highlightsSplit = highlights.split('\n');
-    highlightsSplit.map((item)=>{
+    highlightsSplit.forEach((item)=>{
         if(item && item.length > 0){
             highlightsFinalArray.push(item.slice(2))
         }
