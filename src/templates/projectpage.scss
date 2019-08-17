@@ -90,6 +90,16 @@ $container-width-xs: 370px;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     padding-inline-start: 0px;
+    margin-top: 1rem;
+  }
+
+  li {
+    border-bottom: 1px solid $secondary-hover;
+    padding-bottom: 1rem;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
   }
 }
 
@@ -103,6 +113,10 @@ $container-width-xs: 370px;
 // -------- Project Highlight - li --------
 .Project-Highlights-Highlight {
   margin: 0.8rem auto;
+
+  &:last-of-type {
+    margin: 0;
+  }
 }
 
 // -------- Project Description - p --------

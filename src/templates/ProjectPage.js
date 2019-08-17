@@ -31,7 +31,9 @@ export const query = graphql`
     technologyLabel
     technologies
     highlightsLabel
-    highlights
+    highlights {
+        highlights
+    }
     githubLink
     websiteLink
     longDescription {
@@ -60,7 +62,7 @@ const ProjectPage = (props) => {
     const { technologyLabel } = data;
     const { technologies } = data;
     const { highlightsLabel } = data;
-    const { highlights } = data;
+    const { highlights } = data.highlights;
     const { longDescription } = data.longDescription;
     const { githubLink } = data;
     const { websiteLink } = data;
@@ -84,6 +86,18 @@ const ProjectPage = (props) => {
 
     const techCol1 = technologies.slice(0, 3);
     const techCol2 = technologies.slice(3, 6);
+
+    // Process Highlights String
+    let highlightsFinalArray = [];
+    const highlightsSplit = highlights.split('\n');
+    highlightsSplit.map((item)=>{
+        if(item && item.length > 0){
+            highlightsFinalArray.push(item.slice(2))
+        }
+    });
+
+
+
 
     return (
         <React.Fragment>
@@ -145,8 +159,8 @@ const ProjectPage = (props) => {
                         <div className="Project-Highlights">
                             <h6 className="Project-Highlights-Title font-weight-bold text-center" style={pageStyle.headerText}>{highlightsLabel}</h6>
                             <ul>
-                                {highlights.map((highlight, i) =>
-                                    <li className="Project-Highlights-Highlight" key={i}>{highlight}</li>)
+                                {highlightsFinalArray.map((item, i) =>
+                                    <li className="Project-Highlights-Highlight" key={i}>{item}</li>)
                                 }
                             </ul>
                         </div>
