@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
+import CustomButton from './CustomButton';
 import './aboutdetails.scss';
 
 class Headshot extends Component {
@@ -10,7 +11,7 @@ class Headshot extends Component {
             <React.Fragment>
                 <section id="AboutDetails">
                     <Row>
-                        <Col xs={12} lg={6}>
+                        <Col xs={12} lg={6} className="AboutDetails-Wrapper">
                             <div className="AboutDetails-FunFacts">
                                 <h4 className="my-3">Fun Facts</h4>
                                 <ul>
@@ -20,7 +21,7 @@ class Headshot extends Component {
                                 </ul>
                             </div>
                         </Col>
-                        <Col xs={12} lg={6}>
+                        <Col xs={12} lg={6} className="AboutDetails-Wrapper">
                             <div className="AboutDetails-Description">
                                 <h4 className="my-3">My Story</h4>
                                 <p>{aboutDescription}</p>
