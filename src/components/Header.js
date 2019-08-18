@@ -63,7 +63,7 @@ class Header extends Component {
                     className={`Navbar ${this.state.isActive} ${this.state.isScrolled}`}
                     expand="lg">
                     <Container>
-                        <Link to="/" className="Header-Logo">
+                        <Link to="/" className="Header-Logo Logo">
                             Spencer Marx
                         </Link>
                         <Navbar.Toggle

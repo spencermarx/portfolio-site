@@ -13,7 +13,7 @@ class Footer extends Component {
                 <footer className="Footer">
                     <Container>
                         <Row>
-                            <Col xs={12} md={6} className="Footer-Logo">
+                            <Col xs={12} md={6} className="Footer-Logo Logo">
                                 <Link to="/">Spencer Marx</Link>
                             </Col>
                             <Col className="col-12 col-md-6">
