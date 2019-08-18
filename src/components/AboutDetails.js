@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
-import CustomButton from './CustomButton';
 import './aboutdetails.scss';
 
 class Headshot extends Component {
