@@ -3,11 +3,6 @@
 // ======================
 @import "./layout.scss";
 
-@font-face {
-  font-family: "Permanent Marker";
-  src: url("../fonts/PermanentMarker-Regular.ttf");
-}
-
 // -------- Footer --------
 .Footer {
   width: 100%;
@@ -26,8 +21,8 @@
 }
 
 .Footer-Logo {
-  font-family: "Permanent Marker", sans-serif;
-  font-size: 1.2rem;
+  font-family: "StriverX", sans-serif;
+  font-size: 1.5rem;
   margin: 0.5rem auto 1rem auto;
 }
 
