@@ -94,7 +94,7 @@ $container-width-xs: 370px;
   }
 
   li {
-    border-bottom: 1px solid #d8d8d8;
+    border-bottom: 1px solid $light-gray;
     padding-bottom: 1rem;
 
     &:last-of-type {
