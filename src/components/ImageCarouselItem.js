@@ -63,7 +63,7 @@ class ImageCarouselItem extends Component {
         return (
             <Row className='ImageCarousel-Item' style={imageStyle}>
                 <Col xs={12} md={6} className='ImageCarousel-Item-Info order-1 order-md-0'>
-                    <div className="d-flex align-items-between align-items-lg-center h-100">
+                    <div className="d-flex align-items-between align-items-md-center h-100">
                         <div className="ImageCarousel-Image-Metadata">
                             <h6 className="ImageCarousel-Image-Metadata-Title">{image.title}</h6>
                             <p className="ImageCarousel-Image-Metadata-Description">{image.description}</p>
