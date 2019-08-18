@@ -6,7 +6,7 @@
 
 const path = require(`path`);
 
- module.exports = {
+module.exports = {
   /* Your site config here */
   plugins: [
     {
@@ -25,8 +25,15 @@ const path = require(`path`);
         path: path.join(__dirname, `src`, `images`),
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
+        // Defines where to place the tracking script - `true` in the head and `false` in the body
+        head: true,
+      },
+    },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-
   ]
 }
