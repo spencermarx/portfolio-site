@@ -8,10 +8,11 @@ class TypedTitles extends Component {
         // your desired props to this destructuring assignment.
         const titles = [
             'Full Stack Developer',
+            'ReactJS Fanatic',
             'UX Designer',
-            'Product Lead',
+            'Startup Builder',
             'GIS Specialist',
-            'Researcher'
+            'Researcher',
         ];
 
         // You can pass other options here, such as typing speed, back speed, etc.
