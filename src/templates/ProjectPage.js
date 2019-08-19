@@ -17,11 +17,13 @@ export const query = graphql`
     slug
     projectType
     projectTitle
+    heroBackdrop {
+        fluid(maxWidth: 1000){
+     ...GatsbyContentfulFluid
+        }
+    }
     heroImage {
-      file {
-        url
-      }
-      fluid(maxWidth: 2000){
+      fluid(maxWidth: 600){
      ...GatsbyContentfulFluid
         }
     }
@@ -69,6 +71,7 @@ const ProjectPage = (props) => {
     const { projectMedia } = data;
     console.log(websiteLink)
     const heroImage = data.heroImage.fluid;
+    const heroBackdrop = data.heroBackdrop.fluid;
 
     const pageStyle = {
         headerText: {
@@ -90,8 +93,8 @@ const ProjectPage = (props) => {
     // Process Highlights String
     let highlightsFinalArray = [];
     const highlightsSplit = highlights.split('\n');
-    highlightsSplit.forEach((item)=>{
-        if(item && item.length > 0){
+    highlightsSplit.forEach((item) => {
+        if (item && item.length > 0) {
             highlightsFinalArray.push(item.slice(2))
         }
     });
@@ -102,17 +105,20 @@ const ProjectPage = (props) => {
     return (
         <React.Fragment>
             <Layout>
-                <Img className="Project-Hero" fluid={heroImage} alt="Project hero" />
+                <div className="Project-Hero-Container">
+                    <Img className="Project-Hero-Backdrop" fluid={heroBackdrop} alt="Project hero backdrop" />
+                    <Img className="Project-Hero" fluid={heroImage} alt="Project hero" />
+                </div>
                 <h5 className="Project-Type text-center" style={pageStyle.headerText}>{projectType}</h5>
                 <h1 className="Project-Title text-center" style={pageStyle.headerText}>{projectTitle}</h1>
                 {websiteLink && (websiteLink.length > 0) ? (
                     <div className="Project-Buttons">
                         <Row>
                             <Col xs={6} className="Project-Button-Wrapper d-flex justify-content-end">
-                                <SocialIcon icon="github-special" color={themeColor} link={githubLink}/>
+                                <SocialIcon icon="github-special" color={themeColor} link={githubLink} />
                             </Col>
                             <Col xs={6} className="Project-Button-Wrapper d-flex justify-content-start">
-                            <SocialIcon icon="externalSite" color={themeColor} link={websiteLink}/>
+                                <SocialIcon icon="externalSite" color={themeColor} link={websiteLink} />
                             </Col>
                         </Row>
                     </div>
