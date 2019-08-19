@@ -16,7 +16,7 @@ class ContactForm extends Component {
         super(props);
         this.state = {
             loading: false,
-            error: false,
+            error: true,
             complete: false,
             reset: false,
             firstName: "",
@@ -45,6 +45,7 @@ class ContactForm extends Component {
             'message': message,
         };
         console.log(formObject);
+        this.props.getFormState('submitting')
 
         this.sendFormWithFetch(formObject);
 
@@ -52,7 +53,9 @@ class ContactForm extends Component {
     }
 
     handleReset(event) {
+        this.props.getFormState('active')
         this.setState({ error: false });
+
     }
 
     render() {
