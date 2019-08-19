@@ -69,7 +69,6 @@ const ProjectPage = (props) => {
     const { githubLink } = data;
     const { websiteLink } = data;
     const { projectMedia } = data;
-    console.log(websiteLink)
     const heroImage = data.heroImage.fluid;
     const heroBackdrop = data.heroBackdrop.fluid;
 

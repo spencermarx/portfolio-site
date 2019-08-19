@@ -39,7 +39,7 @@ class Indicators extends Component {
                     r={circleRadius}
                     stroke={themeColor}
                     fill={themeColor}
-                    stroke-width="2"
+                    strokeWidth="2"
                     key={`Indicator ${i}`} />)
             } else {
                 indicatorBubbles.push(<circle
@@ -47,7 +47,7 @@ class Indicators extends Component {
                     cy="6.5"
                     r={circleRadius}
                     stroke={themeColor}
-                    stroke-width="2"
+                    strokeWidth="2"
                     key={`Indicator ${i}`} />)
             }
         }
