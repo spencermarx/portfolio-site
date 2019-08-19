@@ -1,9 +1,19 @@
+// ======================
+// Project Thumbnail Component
+// ======================
+
+//Include default layout styles
+@import "./layout.scss";
+
+// -------- ProjectThumbnail - Div --------
 .ProjectThumbnail {
   height: 280px;
   width: 100%;
   overflow: hidden;
 }
 
+// -------- ProjectThumbnail Image - Img --------
 .ProjectThumbnail-Image {
   width: 100%;
+  transition: $transition-smooth-normal;
 }

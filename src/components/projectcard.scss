@@ -19,6 +19,10 @@
   transition: $transition-smooth-normal;
   transform: scale(1.02);
   cursor: pointer;
+
+  .ProjectThumbnail-Image {
+    transform: scale(1.03);
+  }
 }
 
 // -------- Project Type- h5 --------
