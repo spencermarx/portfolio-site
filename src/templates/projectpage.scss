@@ -10,11 +10,71 @@ $container-width-lg: 900px;
 $container-width-md: 650px;
 $container-width-xs: 370px;
 
+// -------- Project Hero Container - Div --------
+.Project-Hero-Container {
+  top: 1rem;
+  position: relative;
+  margin-bottom: 7rem;
+}
+// -------- Project Hero Backdrop - Img --------
+.Project-Hero-Backdrop {
+  width: 100%;
+  height: auto;
+}
 // -------- Project Hero - Img --------
 .Project-Hero {
-  top: 1rem;
-  width: 100%;
+  position: absolute !important;
+  width: 320px;
+  left: 50%;
+  margin-left: -160px;
+  bottom: -6rem;
 }
+
+@media (min-width: $breakpoint-md) {
+  // -------- Project Hero Container - Div --------
+  .Project-Hero-Container {
+    top: 1rem;
+    margin-bottom: 6rem;
+  }
+
+  // -------- Project Hero - Img --------
+  .Project-Hero {
+    width: 550px;
+    left: 50%;
+    margin-left: -275px;
+    bottom: -6rem;
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  // -------- Project Hero Container - Div --------
+  .Project-Hero-Container {
+    top: 1rem;
+    margin-bottom: 6rem;
+  }
+
+  // -------- Project Hero - Img --------
+  .Project-Hero {
+    width: 650px;
+    margin-left: -325px;
+    bottom: -6rem;
+  }
+}
+@media (min-width: $breakpoint-xl) {
+  // -------- Project Hero Container - Div --------
+  .Project-Hero-Container {
+    top: 1rem;
+    margin-bottom: 8rem;
+  }
+
+  // -------- Project Hero - Img --------
+  .Project-Hero {
+    width: 800px;
+    margin-left: -400px;
+    bottom: -9.5rem;
+  }
+}
+
 // -------- Project Type - h5 --------
 .Project-Type {
   margin-top: 2rem;
