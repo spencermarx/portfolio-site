@@ -1,7 +1,7 @@
 @import "./layout.scss";
 
 .ContactForm {
-  margin-top: 2rem;
+  margin-top: 0;
 }
 
 .ContactForm-Wrapper {
@@ -9,7 +9,6 @@
   max-width: 600px;
   height: 382px;
   padding: 2rem;
-  box-shadow: $shadow-normal;
 }
 
 // Define width and height so on change states wrapper doesn't change sizes
