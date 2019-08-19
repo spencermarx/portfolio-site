@@ -16,7 +16,7 @@ class ContactForm extends Component {
         super(props);
         this.state = {
             loading: false,
-            error: true,
+            error: false,
             complete: false,
             reset: false,
             firstName: "",
