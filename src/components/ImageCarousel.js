@@ -18,14 +18,14 @@ class ImageCarousel extends Component {
 
     handleForwardClick() {
         const currentImage = this.state.activeImage;
-        console.log(currentImage);
+        // console.log(currentImage);
 
         if (currentImage < this.state.totalImages - 1) {
             this.setState({ activeImage: currentImage + 1 });
-            console.log("Forward");
+            // console.log("Forward");
         } else {
             this.setState({ activeImage: 0 });
-            console.log("Back to beginning");
+            // console.log("Back to beginning");
         }
     }
     handleBackwardClick() {
@@ -44,7 +44,7 @@ class ImageCarousel extends Component {
         } else if (clickData === 'forward'){
             this.handleForwardClick();
         } else {
-            console.log("Error")
+            // console.log("Error")
         }
 
     }
