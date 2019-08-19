@@ -99,8 +99,9 @@ const ProjectPage = (props) => {
         }
     });
 
-
-
+    // Date Format Conversion
+    let convertedDate = new Date(startDate);
+    convertedDate = convertedDate.toDateString().split(' ').slice(1).join(' ');
 
     return (
         <React.Fragment>
@@ -131,7 +132,7 @@ const ProjectPage = (props) => {
                             <h6 className="Project-Info font-weight-bold" style={pageStyle.headerText}>Project Info</h6>
                             <ul>
                                 <li className="Project-Info-Start-Date">
-                                    <strong>Start Date:</strong>&nbsp;{startDate}
+                                    <strong>Start Date:</strong>&nbsp;{convertedDate}
                                 </li>
                                 <li className="Project-Info-Duration">
                                     <strong>Duration:</strong>&nbsp;{duration}
