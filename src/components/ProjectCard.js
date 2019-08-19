@@ -21,11 +21,11 @@ class ProjectCard extends Component {
 
     onHover(e) {
         e.preventDefault();
-        console.log("Is hovering")
+        // console.log("Is hovering")
         this.setState(prevState => ({ isHovered: !prevState.isHovered }));
         this.setState(prevState => ({ front: !prevState.front }));
         this.setState(prevState => ({ back: !prevState.back }));
-        console.log("Hover State:", this.state.isHovered)
+        // console.log("Hover State:", this.state.isHovered)
     }
 
     onClick(e) {
