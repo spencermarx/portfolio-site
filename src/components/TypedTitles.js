@@ -8,7 +8,7 @@ class TypedTitles extends Component {
         // your desired props to this destructuring assignment.
         const titles = [
             'Full Stack Developer',
-            'ReactJS Fanatic',
+            'ReactJS Aficionado',
             'UX Designer',
             'Startup Builder',
             'GIS Specialist',
