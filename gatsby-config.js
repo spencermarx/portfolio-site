@@ -42,5 +42,17 @@ module.exports = {
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Spencer Marx | Full Stack Developer`,
+        short_name: `Marx | Dev`,
+        start_url: `/`,
+        background_color: `#FFF`,
+        theme_color: `#000`,
+        display: `standalone`,
+        icon: `src/images/logo-pwa-icon.png`, // This path is relative to the root of the site.
+      },
+    }
   ]
 }
