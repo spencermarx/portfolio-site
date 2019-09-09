@@ -53,6 +53,12 @@ module.exports = {
         display: `standalone`,
         icon: `src/images/logo-icon.png`, // This path is relative to the root of the site.
       },
-    }
+    },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/`, `/about`, `/project/*`],
+      },
+    },
   ]
 }
