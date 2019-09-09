@@ -197,6 +197,10 @@ $container-width-xs: 370px;
 // -------- Project Buttons - Link --------
 .Project-Buttons {
   margin: 1.5rem auto;
+
+  .row {
+    margin: 0;
+  }
 }
 
 // -------- Project Buttons - Link --------
