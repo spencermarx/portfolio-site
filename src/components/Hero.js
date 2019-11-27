@@ -12,7 +12,12 @@ class Hero extends Component {
                         <h1 className="Hero-Text-Header" >Hi, I'm Spencer, I'm a<br />
                         <strong><TypedTitles/></strong><br/>
                          living in Boston.</h1>
-                        <p className="Hero-Text-SubHeader">Background in UX Design and Geographic Information Systems. Currently considering new work opportunities building impactful digital experiences.</p>
+                        <p className="Hero-Text-SubHeader">
+                            Background in Software Development, UX Design, and GIS.
+                            Currently building impactful digital experiences at&nbsp;
+                            <a href="https://www.humancaresystems.com/" target="_blank" rel="noopener noreferrer">
+                                Human Care Systems
+                            </a>.</p>
                     </div>
                 </section>
             </React.Fragment>
