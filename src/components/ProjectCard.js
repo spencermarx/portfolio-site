@@ -86,6 +86,7 @@ class ProjectCard extends Component {
                         <p className="ProjectCard-Short-Description text-center mt-3 mb-4">{shortDescription}</p>
                         {technologyLabel === 'Technology' ? (
                             <Row>
+                                { githubLink ?
                                 <Col xs={6} className="d-flex justify-content-center">
                                     <CustomButton
                                         classNameProp="ProjectCard-Button text-center"
@@ -98,7 +99,9 @@ class ProjectCard extends Component {
                                         fill="none"
                                     >View Source</CustomButton>
                                 </Col>
-                                <Col xs={6} className="d-flex justify-content-center">
+                                : null
+                            }
+                                <Col xs={githubLink ? 6 : 12} className="d-flex justify-content-center">
                                     <CustomButton
                                         classNameProp="ProjectCard-Button text-center"
                                         link={`/project/${slug}`}
