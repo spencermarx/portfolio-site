@@ -1,20 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Header';
 import Footer from './Footer';
+import initializeLogRocket from '../vendors/logRocket.vendor';
 import './layout.scss';
-class Layout extends Component {
-    render() {
-        return (
-            <React.Fragment>
-                <Header />
-                <main className="Layout-MainContent">
-                    {this.props.children}
-                </main>
-                <Footer />
-            </React.Fragment>
-        )
-    }
-}
 
-export default Layout;
+export default props => {
+  initializeLogRocket();
+  const { children } = props;
+  return (
+    <>
+      <Header />
+      <main className="Layout-MainContent">{children}</main>
+      <Footer />
+    </>
+  );
+};
