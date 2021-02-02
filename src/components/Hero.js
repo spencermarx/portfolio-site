@@ -7,8 +7,8 @@ class Hero extends Component {
     render() {
         return (
             <React.Fragment>
-                <section id="Hero" className="Hero">
-                    <div className="Hero-Text">
+                <section id="Hero" className="Hero ">
+                    <div className="Hero-Text particle-avoid">
                         <h1 className="Hero-Text-Header" >Hi, I'm Spencer, I'm a<br />
                         <strong><TypedTitles/></strong><br/>
                          living in Boston.</h1>

@@ -63,11 +63,11 @@ class Header extends Component {
                     className={`Navbar ${this.state.isActive} ${this.state.isScrolled}`}
                     expand="lg">
                     <Container>
-                        <Link to="/" className="Header-Logo Logo">
+                        <Link to="/" className="Header-Logo Logo particle-avoid">
                             Spencer Marx
                         </Link>
                         <Navbar.Toggle
-                            className="Navbar-Toggle"
+                            className="Navbar-Toggle particle-avoid"
                             aria-controls="basic-navbar-nav"
                             onClick={this.handleClick}
                         >
@@ -77,8 +77,8 @@ class Header extends Component {
                             className="Navbar-Collapse"
                             id="basic-navbar-nav">
                             <Nav className="ml-auto my-4">
-                                <Link to="/about" className="Header-Links">About</Link>
-                                <Link to="/contact" className="Header-Links">Contact</Link>
+                                <Link to="/about" className="Header-Links particle-avoid">About</Link>
+                                <Link to="/contact" className="Header-Links particle-avoid">Contact</Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>

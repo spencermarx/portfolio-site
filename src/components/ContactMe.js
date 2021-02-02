@@ -8,7 +8,7 @@ class ContactMe extends Component {
     render() {
         return (
             <React.Fragment>
-                <section id="ContactMe" className="ContactMe">
+                <section id="ContactMe" className="ContactMe particle-avoid">
                     <h1 className="ContactMe-Header text-center">Got a question?</h1>
                     <p className="ContactMe-Text text-center">Don’t be shy! I’d love to help in any way that I can!</p>
                     <Row>
