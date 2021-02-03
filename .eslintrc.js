@@ -11,6 +11,7 @@ module.exports = {
   rules: {
     'import/no-named-as-default': ['off'],
     'import/no-named-as-default-member': ['off'],
+    'import/prefer-default-export': ['off'],
     'react/prop-types': ['off'],
     'no-param-reassign': ['off'],
     'jsx-a11y/href-no-hash': ['off'],
