@@ -1,0 +1,8 @@
+{
+  "plugins": [
+    "add-react-displayname"
+  ],
+  "presets": [
+    "babel-preset-gatsby"
+  ]
+}
