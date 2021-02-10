@@ -165,7 +165,13 @@ $container-width-xs: 370px;
 
 @media (min-width: $breakpoint-md) {
   .Project-Highlights {
-    width: 500px;
+    max-width: 600px;
+    margin: auto;
+  }
+}
+@media (min-width: $breakpoint-lg) {
+  .Project-Highlights {
+    max-width: 800px;
     margin: auto;
   }
 }
