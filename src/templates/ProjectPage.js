@@ -123,7 +123,10 @@ const ProjectPage = props => {
         <h1 className="Project-Title text-center" style={pageStyle.headerText}>
           {projectTitle}
         </h1>
-        {websiteLink && websiteLink.length > 0 ? (
+        {githubLink &&
+        githubLink.length > 1 &&
+        websiteLink &&
+        websiteLink.length > 0 ? (
           <div className="Project-Buttons">
             <Row>
               <Col
@@ -139,6 +142,24 @@ const ProjectPage = props => {
               <Col
                 xs={6}
                 className="Project-Button-Wrapper d-flex justify-content-start"
+              >
+                <SocialIcon
+                  icon="externalSite"
+                  color={themeColor}
+                  link={websiteLink}
+                />
+              </Col>
+            </Row>
+          </div>
+        ) : null}
+        {(!githubLink || githubLink.length < 1) &&
+        websiteLink &&
+        websiteLink.length > 0 ? (
+          <div className="Project-Buttons">
+            <Row>
+              <Col
+                xs={12}
+                className="Project-Button-Wrapper d-flex justify-content-center"
               >
                 <SocialIcon
                   icon="externalSite"
