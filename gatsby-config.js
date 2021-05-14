@@ -10,11 +10,27 @@ module.exports = {
   /* Your site config here */
   plugins: [
     {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images-contentful`,
+            options: {
+              maxWidth: 590,
+              linkImagesToOriginal: false,
+              withWebp: true,
+              loading: 'lazy',
+            },
+          },
+        ],
+      },
+    },
+    {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-      }
+      },
     },
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
@@ -37,7 +53,7 @@ module.exports = {
       resolve: `gatsby-plugin-hotjar`,
       options: {
         id: process.env.HOTJAR_ID,
-        sv: process.env.HOTJAR_SNIPPET_VERSION
+        sv: process.env.HOTJAR_SNIPPET_VERSION,
       },
     },
     `gatsby-plugin-sharp`,
@@ -57,8 +73,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-offline`,
       options: {
-        precachePages: [`/`, `/about`, `/project/*`],
+        precachePages: [`/`, `/about`, `/project/*`, `/blog/*`],
       },
     },
-  ]
-}
+  ],
+};

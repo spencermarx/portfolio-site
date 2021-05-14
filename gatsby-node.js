@@ -1,47 +1,60 @@
 const path = require('path');
 
-// module.exports.onCreateNode = ({ node, actions }) => {
-//     const { createNodeField } = actions;
+const getProjectPages = ({ graphql }) =>
+  graphql(`
+    query {
+      allContentfulProject {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+    }
+  `);
 
-//     if (node.internal.type === 'ContentfulProject') {
-//         const slug = node.slug;
-//         console.log("----", slug);
-
-//         createNodeField({
-//             node,
-//             name: 'slug',
-//             value: slug
-//         })
-//     }
-// }
+const getBlogPages = ({ graphql }) =>
+  graphql(`
+    query {
+      allContentfulBlogPost {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+    }
+  `);
 
 module.exports.createPages = async ({ graphql, actions }) => {
-    const { createPage } = actions;
+  const { createPage } = actions;
 
-    // Get path to template
-    const projectTemplate = path.resolve('./src/templates/ProjectPage.js');
+  const projectPageQuery = await getProjectPages({ graphql });
+  const blogPostQuery = await getBlogPages({ graphql });
 
-    // Get Contentful data
-    const response = await graphql(`
-        query {
-            allContentfulProject {
-            edges {
-                node {
-                slug
-                }
-            }
-            }
-        }
-    `);
+  // Create new pages
 
-    // Create new pages
-    response.data.allContentfulProject.edges.forEach((edge) => {
-        createPage({
-            component: projectTemplate,
-            path: `/project/${edge.node.slug}`,
-            context: {
-                slug: edge.node.slug,
-            }
-        })
-    })
-}
+  // Project Pages
+  projectPageQuery.data.allContentfulProject.edges.forEach(edge => {
+    createPage({
+      component: path.resolve('./src/templates/ProjectPage.js'),
+      path: `/project/${edge.node.slug}`,
+      context: {
+        slug: edge.node.slug,
+      },
+    });
+  });
+
+  // Blog Pages
+  blogPostQuery.data.allContentfulBlogPost.edges.forEach(edge => {
+    createPage({
+      component: path.resolve(
+        './src/components/templates/BlogPost.Template.tsx',
+      ),
+      path: `/blog/${edge.node.slug}`,
+      context: {
+        slug: edge.node.slug,
+      },
+    });
+  });
+};

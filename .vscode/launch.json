@@ -1,0 +1,33 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Gatsby develop",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/gatsby/dist/bin/gatsby",
+      "console": "integratedTerminal",
+      "args": [
+        "develop"
+      ],
+      "runtimeArgs": [
+        "--nolazy"
+      ],
+      "envFile": "${workspaceFolder}/.env.development"
+    },
+    {
+      "name": "Gatsby build",
+      "type": "node",
+      "request": "launch",
+      "protocol": "inspector",
+      "program": "${workspaceRoot}/node_modules/gatsby/dist/bin/gatsby",
+      "args": [
+        "build"
+      ],
+      "runtimeArgs": [
+        "--nolazy"
+      ],
+      "sourceMaps": false
+    }
+  ]
+}
