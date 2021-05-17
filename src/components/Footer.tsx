@@ -1,10 +1,10 @@
-import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import { Link } from 'gatsby';
-import SocialIcon from './SocialIcon';
-import './footer.scss';
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import { Link } from "gatsby";
+import SocialIcon from "./SocialIcon";
+import "./footer.scss";
 
-export default () => {
+const Footer: React.FC = () => {
   return (
     <footer className="Footer">
       <Container>
@@ -31,3 +31,5 @@ export default () => {
     </footer>
   );
 };
+
+export default Footer;

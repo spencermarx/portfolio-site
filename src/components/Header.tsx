@@ -78,6 +78,7 @@ class Header extends Component {
                             id="basic-navbar-nav">
                             <Nav className="ml-auto my-4">
                                 <Link to="/about" className="Header-Links">About</Link>
+                                <Link to="/blog" className="Header-Links">Blog</Link>
                                 <Link to="/contact" className="Header-Links">Contact</Link>
                             </Nav>
                         </Navbar.Collapse>
