@@ -1,4 +1,14 @@
-const path = require('path');
+const path = require("path");
+
+const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      plugins: [new TsconfigPathsPlugin()],
+    },
+  });
+};
 
 const getProjectPages = ({ graphql }) =>
   graphql(`
@@ -26,6 +36,23 @@ const getBlogPages = ({ graphql }) =>
     }
   `);
 
+module.exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
+  createTypes(`
+      type Mdx implements Node {
+        frontmatter: MdxFrontmatter
+      }
+
+      type MdxFrontmatter {
+        items: [ItemValues]
+        content: String @mdx
+      }
+
+      type ItemValues {
+        value: String @mdx
+      }
+    `);
+};
+
 module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
@@ -35,9 +62,9 @@ module.exports.createPages = async ({ graphql, actions }) => {
   // Create new pages
 
   // Project Pages
-  projectPageQuery.data.allContentfulProject.edges.forEach(edge => {
+  projectPageQuery.data.allContentfulProject.edges.forEach((edge) => {
     createPage({
-      component: path.resolve('./src/templates/ProjectPage.js'),
+      component: path.resolve("./src/templates/ProjectPage.js"),
       path: `/project/${edge.node.slug}`,
       context: {
         slug: edge.node.slug,
@@ -46,11 +73,9 @@ module.exports.createPages = async ({ graphql, actions }) => {
   });
 
   // Blog Pages
-  blogPostQuery.data.allContentfulBlogPost.edges.forEach(edge => {
+  blogPostQuery.data.allContentfulBlogPost.edges.forEach((edge) => {
     createPage({
-      component: path.resolve(
-        './src/components/templates/BlogPost.Template.tsx',
-      ),
+      component: path.resolve("./src/components/templates/BlogPost.Template.tsx"),
       path: `/blog/${edge.node.slug}`,
       context: {
         slug: edge.node.slug,
