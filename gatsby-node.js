@@ -10,7 +10,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   });
 };
 
-const getProjectPages = ({ graphql }) =>
+const getProjects = ({ graphql }) =>
   graphql(`
     query {
       allContentfulProject {
@@ -56,15 +56,15 @@ module.exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
 module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  const projectPageQuery = await getProjectPages({ graphql });
+  const projectQuery = await getProjects({ graphql });
   const blogPostQuery = await getBlogPages({ graphql });
 
   // Create new pages
 
   // Project Pages
-  projectPageQuery.data.allContentfulProject.edges.forEach((edge) => {
+  projectQuery.data.allContentfulProject.edges.forEach((edge) => {
     createPage({
-      component: path.resolve("./src/templates/ProjectPage.js"),
+      component: path.resolve("./src/components/templates/Project/Project.tsx"),
       path: `/project/${edge.node.slug}`,
       context: {
         slug: edge.node.slug,

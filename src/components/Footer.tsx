@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "gatsby";
-import SocialIcon from "./SocialIcon";
+import SocialIcon from "@components/molecules/SocialIcon/SocialIcon";
 import "./footer.scss";
 
 const Footer: React.FC = () => {
