@@ -4,6 +4,7 @@ import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Helmet } from "react-helmet";
 import { Container } from "react-bootstrap";
+import { DateTime } from "luxon";
 import Layout from "@components/Layout";
 import CodeBlock from "@components/organisms/CodeBlock/CodeBlock.organism";
 import "./post.scss";
@@ -83,12 +84,19 @@ const Post: React.FC<Props> = (props: Props) => {
       },
     },
   } = data;
+
   return (
     <Layout>
       <Container className="post">
         <MDXProvider components={components}>
           {getSEO(frontmatter, thumbnail)}
-          <h1 className="post-title text-center pt-4 pb-3">{frontmatter.title}</h1>
+          <div className="pt-4 pb-3 text-center ">
+            <h1 className="PostTitle">{frontmatter.title}</h1>
+            <p className="PostDate">
+              Last updated:{" "}
+              {DateTime.fromISO(frontmatter.date).toLocaleString({ month: "long", day: "numeric", year: "numeric" })}
+            </p>
+          </div>
           <article className="mdx pb-4">
             <MDXRenderer scope>{body}</MDXRenderer>
           </article>

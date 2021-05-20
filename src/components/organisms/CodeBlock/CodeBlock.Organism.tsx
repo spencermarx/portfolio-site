@@ -1,6 +1,7 @@
 import React from "react";
 import Highlight, { defaultProps } from "prism-react-renderer";
-import theme from "prism-react-renderer/themes/okaidia";
+import theme from "prism-react-renderer/themes/oceanicNext";
+import clsx from "clsx";
 
 interface Props {
   children: Record<string, any>;
@@ -17,7 +18,7 @@ const CodeBlock: React.FC<Props> = (props: Props) => {
       theme={theme}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} style={{ ...style, padding: "20px" }}>
+        <pre className={clsx(className, "rounded")} style={{ ...style, padding: "20px" }}>
           {tokens.map((line, i) => (
             <div key={i} {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (
