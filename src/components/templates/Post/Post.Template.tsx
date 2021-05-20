@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet";
 import { Container } from "react-bootstrap";
 import Layout from "@components/Layout";
 import CodeBlock from "@components/organisms/CodeBlock/CodeBlock.organism";
-import "./blogpost.scss";
+import "./post.scss";
 
 export const query = graphql`
   query ($slug: String!) {
@@ -73,7 +73,7 @@ const getSEO = (frontmatter: Record<string, any>, thumbnail: Record<string, any>
   />
 );
 
-const BlogPost: React.FC<Props> = (props: Props) => {
+const Post: React.FC<Props> = (props: Props) => {
   const { data } = props;
   const {
     contentfulBlogPost: {
@@ -85,10 +85,10 @@ const BlogPost: React.FC<Props> = (props: Props) => {
   } = data;
   return (
     <Layout>
-      <Container className="blogPost">
+      <Container className="post">
         <MDXProvider components={components}>
           {getSEO(frontmatter, thumbnail)}
-          <h1 className="blog-title text-center pt-4 pb-3">{frontmatter.title}</h1>
+          <h1 className="post-title text-center pt-4 pb-3">{frontmatter.title}</h1>
           <article className="mdx pb-4">
             <MDXRenderer scope>{body}</MDXRenderer>
           </article>
@@ -98,4 +98,4 @@ const BlogPost: React.FC<Props> = (props: Props) => {
   );
 };
 
-export default BlogPost;
+export default Post;

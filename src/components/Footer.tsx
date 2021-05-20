@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
         </Row>
         <Row className="Footer-Signature row mt-5">
           <Col className="text-center">
-            <p className="my-0">© 2018 All Rights Reserved | Spencer Marx</p>
+            <p className="my-0">© 2021 All Rights Reserved | Spencer Marx</p>
           </Col>
         </Row>
       </Container>

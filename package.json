@@ -17,6 +17,9 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "axios": "^0.21.1",
@@ -38,8 +41,10 @@
     "gatsby-source-contentful": "^2.3.56",
     "gatsby-source-filesystem": "^3.5.0",
     "gatsby-transformer-sharp": "^3.5.0",
+    "lodash.get": "^4.4.2",
     "logrocket": "^1.2.0",
     "logrocket-react": "^4.0.1",
+    "luxon": "^1.27.0",
     "node-sass": "^4.14.1",
     "prism-react-renderer": "^1.2.0",
     "prop-types": "^15.7.2",
@@ -52,6 +57,8 @@
     "typed.js": "^2.0.12"
   },
   "devDependencies": {
+    "@types/lodash.get": "^4.4.6",
+    "@types/luxon": "^1.26.5",
     "@types/mdx-js__react": "^1.5.3",
     "@types/node": "^15.3.0",
     "@types/react": "^17.0.5",

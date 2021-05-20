@@ -1,0 +1,55 @@
+// ======================
+// PostCard Component
+// ======================
+
+//Include default layout styles
+
+// -------- PostCard - Div --------
+.PostCard {
+  width: 350px;
+  height: 350px;
+  border-radius: 0;
+  transition: all $transition-smooth-normal;
+  box-shadow: $shadow-normal;
+
+  .PostCard-Title {
+    color: $primary;
+    transition: color $transition-smooth-fast;
+  }
+
+  .PostCard-Read-Estimate-Icon{
+    color: $medium-gray;
+    transition: all $transition-smooth-fast;
+  }
+
+  &:hover{
+    cursor: pointer;
+    transform: scale(1.03);
+
+    .PostCard-Title {
+      color: $primary-hover
+    }
+
+    .PostCard-Read-Estimate-Icon{
+      color: $secondary;
+      transform: translateX(10px);
+    }
+  }
+}
+
+// -------- ProjectThumbnail - Div --------
+.PostCardThumbnail {
+  height: 280px;
+  width: 100%;
+  overflow: hidden;
+}
+
+// -------- PostCard Image - Img --------
+.PostCardThumbnail-Image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: $transition-smooth-normal;
+}
+
+
