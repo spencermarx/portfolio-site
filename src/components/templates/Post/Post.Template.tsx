@@ -6,6 +6,7 @@ import { Helmet } from "react-helmet";
 import { Container } from "react-bootstrap";
 import { DateTime } from "luxon";
 import Layout from "@components/Layout";
+import DropCap from "@components/atoms/DropCap/DropCap.Atom";
 import CodeBlock from "@components/organisms/CodeBlock/CodeBlock.organism";
 import "./post.scss";
 
@@ -26,6 +27,7 @@ export const query = graphql`
             title
             author
             date
+            readEstimate
           }
         }
       }
@@ -39,6 +41,7 @@ interface Props {
 
 const components = {
   pre: CodeBlock,
+  DropCap,
 };
 
 const getSEO = (frontmatter: Record<string, any>, thumbnail: Record<string, any>) => (
@@ -93,8 +96,9 @@ const Post: React.FC<Props> = (props: Props) => {
           <div className="pt-4 pb-3 text-center ">
             <h1 className="PostTitle">{frontmatter.title}</h1>
             <p className="PostDate">
-              Last updated:{" "}
               {DateTime.fromISO(frontmatter.date).toLocaleString({ month: "long", day: "numeric", year: "numeric" })}
+              <span className="mx-2">•</span>
+              {frontmatter.readEstimate}
             </p>
           </div>
           <article className="mdx pb-4">
