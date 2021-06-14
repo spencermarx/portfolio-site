@@ -6,6 +6,7 @@ import { Helmet } from "react-helmet";
 import { Container } from "react-bootstrap";
 import { DateTime } from "luxon";
 import Layout from "@components/Layout";
+import TagsList from "@components/molecules/TagsList/TagsList.Atom";
 import DropCap from "@components/atoms/DropCap/DropCap.Atom";
 import CodeBlock from "@components/organisms/CodeBlock/CodeBlock.organism";
 import "./post.scss";
@@ -80,21 +81,6 @@ const getSEO = (frontmatter: Record<string, any>, thumbnail: Record<string, any>
   />
 );
 
-const getTags = (tags: string[]) => {
-  if (tags) {
-    return (
-      <ul className="list-unstyled">
-        {tags.map((tag, index) => (
-          <li className="d-inline small rounded-lg bg-medium-gray px-3 mx-2 text-white" key={index}>
-            {tag}
-          </li>
-        ))}
-      </ul>
-    );
-  }
-  return null;
-};
-
 const Post: React.FC<Props> = (props: Props) => {
   const { data } = props;
   const {
@@ -113,7 +99,7 @@ const Post: React.FC<Props> = (props: Props) => {
         <MDXProvider components={components}>
           {getSEO(frontmatter, thumbnail)}
           <div className="pt-4 pb-3 text-center ">
-            {getTags(tags)}
+            {tags ? <TagsList tags={tags} /> : null}
             <h1 className="PostTitle">{frontmatter.title}</h1>
             <p className="PostDate">
               {DateTime.fromISO(frontmatter.date).toLocaleString({ month: "long", day: "numeric", year: "numeric" })}

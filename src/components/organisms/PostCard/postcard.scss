@@ -17,6 +17,12 @@
     transition: color $transition-smooth-fast;
   }
 
+  .PostCard-TagList{
+    position: absolute;
+    top: 0;
+    right: 1rem;
+  }
+
   .PostCard-Read-Estimate-Icon{
     color: $medium-gray;
     transition: all $transition-smooth-fast;

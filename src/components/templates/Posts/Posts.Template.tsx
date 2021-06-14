@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { Container, Row, Col } from "react-bootstrap";
 import Layout from "@components/Layout";
-import PostCard from "@components/organisms/PostCard/PostCard.Organism";
+import PostCard, { Props as PostCardProps } from "@components/organisms/PostCard/PostCard.Organism";
 import _get from "lodash.get";
 import "./posts.scss";
 
@@ -59,7 +59,7 @@ const Posts: React.FC<Props> = ({ data }: Props) => {
         <h1 className="text-center">{label}</h1>
         <section className="Posts py-3">
           <Row>
-            {availableBlogs.map((post: any, index: number) => (
+            {availableBlogs.map((post: PostCardProps, index: number) => (
               <Col
                 xs={12}
                 md={6}
