@@ -1,0 +1,11 @@
+// ======================
+// Global Variables
+// ======================
+
+// ======================
+// Color Variables
+// ======================
+
+.bg {
+  @include color-modifiers(background-color);
+}

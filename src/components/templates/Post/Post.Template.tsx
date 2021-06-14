@@ -20,6 +20,7 @@ export const query = graphql`
           src
         }
       }
+      tags
       body {
         childMdx {
           body
@@ -36,6 +37,7 @@ export const query = graphql`
 `;
 
 interface Props {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   data: Record<string, any>;
 }
 
@@ -44,6 +46,7 @@ const components = {
   DropCap,
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const getSEO = (frontmatter: Record<string, any>, thumbnail: Record<string, any>) => (
   <Helmet
     title={frontmatter.title}
@@ -77,11 +80,27 @@ const getSEO = (frontmatter: Record<string, any>, thumbnail: Record<string, any>
   />
 );
 
+const getTags = (tags: string[]) => {
+  if (tags) {
+    return (
+      <ul className="list-unstyled">
+        {tags.map((tag, index) => (
+          <li className="d-inline small rounded-lg bg-medium-gray px-3 mx-2 text-white" key={index}>
+            {tag}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+  return null;
+};
+
 const Post: React.FC<Props> = (props: Props) => {
   const { data } = props;
   const {
     contentfulBlogPost: {
       thumbnail,
+      tags,
       body: {
         childMdx: { body, frontmatter },
       },
@@ -94,6 +113,7 @@ const Post: React.FC<Props> = (props: Props) => {
         <MDXProvider components={components}>
           {getSEO(frontmatter, thumbnail)}
           <div className="pt-4 pb-3 text-center ">
+            {getTags(tags)}
             <h1 className="PostTitle">{frontmatter.title}</h1>
             <p className="PostDate">
               {DateTime.fromISO(frontmatter.date).toLocaleString({ month: "long", day: "numeric", year: "numeric" })}

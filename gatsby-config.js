@@ -44,7 +44,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sass",
       options: {
-        data: `@import "${__dirname}/src/styles/variables";`,
+        data: `@import "${__dirname}/src/styles/base/index";`,
       },
     },
     "gatsby-plugin-react-helmet",
