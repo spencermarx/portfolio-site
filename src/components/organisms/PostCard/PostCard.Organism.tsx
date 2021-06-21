@@ -22,7 +22,7 @@ const PostCard: React.FC<Props> = ({ title, slug, thumbnail, body, tags }: Props
   return (
     <Link to={`/posts/${slug}`}>
       <Card className="PostCard relative">
-        <div className="PostCardThumbnail position-relative">
+        <div className="PostCard-Thumbnail position-relative">
           <Img className="PostCardThumbnail-Image" fluid={thumbnail.fluid} alt="Project Thumbnail" />
           {tags ? <TagsList className="PostCard-TagList" tags={tags} /> : null}
         </div>

@@ -45,6 +45,11 @@ p {
   color: $secondary;
 }
 
+ul,
+ol {
+  color: $secondary;
+}
+
 // Prevent hover change on Logos
 .Logo,
 .Logo * {

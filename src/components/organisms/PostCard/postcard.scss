@@ -17,28 +17,31 @@
     transition: color $transition-smooth-fast;
   }
 
-  .PostCard-TagList{
+  .PostCard-TagList {
     position: absolute;
     top: 0;
     right: 1rem;
   }
 
-  .PostCard-Read-Estimate-Icon{
+  .PostCard-Read-Estimate-Icon {
     color: $medium-gray;
     transition: all $transition-smooth-fast;
   }
 
-  &:hover{
+  &:hover {
     cursor: pointer;
     transform: scale(1.03);
 
     .PostCard-Title {
-      color: $primary-hover
+      color: $primary-hover;
     }
 
-    .PostCard-Read-Estimate-Icon{
+    .PostCard-Read-Estimate-Icon {
       color: $secondary;
       transform: translateX(8px);
+    }
+    .PostCardThumbnail-Image {
+      transform: scale(1.03);
     }
   }
 }
@@ -57,5 +60,3 @@
   object-fit: cover;
   transition: $transition-smooth-normal;
 }
-
-

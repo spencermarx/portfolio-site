@@ -2,6 +2,7 @@ import React from "react";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import theme from "prism-react-renderer/themes/oceanicNext";
 import clsx from "clsx";
+import "./codeblock.scss";
 
 interface Props {
   children: Record<string, any>;

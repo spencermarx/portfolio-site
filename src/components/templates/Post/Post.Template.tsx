@@ -8,6 +8,7 @@ import { DateTime } from "luxon";
 import Layout from "@components/Layout";
 import TagsList from "@components/molecules/TagsList/TagsList.Atom";
 import DropCap from "@components/atoms/DropCap/DropCap.Atom";
+import Img from "gatsby-image";
 import CodeBlock from "@components/organisms/CodeBlock/CodeBlock.organism";
 import "./post.scss";
 
@@ -45,6 +46,7 @@ interface Props {
 const components = {
   pre: CodeBlock,
   DropCap,
+  Img,
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -95,17 +97,20 @@ const Post: React.FC<Props> = (props: Props) => {
 
   return (
     <Layout>
-      <Container className="post">
+      <Container className="Post">
         <MDXProvider components={components}>
           {getSEO(frontmatter, thumbnail)}
           <div className="pt-4 pb-3 text-center ">
             {tags ? <TagsList tags={tags} /> : null}
-            <h1 className="PostTitle">{frontmatter.title}</h1>
-            <p className="PostDate">
+            <h1 className="Post-Title">{frontmatter.title}</h1>
+            <p className="Post-Date">
               {DateTime.fromISO(frontmatter.date).toLocaleString({ month: "long", day: "numeric", year: "numeric" })}
               <span className="mx-2">•</span>
               {frontmatter.readEstimate}
             </p>
+          </div>
+          <div className="Post-Hero mb-4">
+            <Img className="Post-Thumbnail-Image" fluid={thumbnail.fluid} alt="Project hero" />
           </div>
           <article className="mdx pb-4">
             <MDXRenderer scope>{body}</MDXRenderer>
