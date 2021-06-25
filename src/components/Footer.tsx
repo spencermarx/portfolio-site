@@ -1,10 +1,10 @@
-import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import { Link } from 'gatsby';
-import SocialIcon from './SocialIcon';
-import './footer.scss';
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import { Link } from "gatsby";
+import SocialIcon from "@components/molecules/SocialIcon/SocialIcon";
+import "./footer.scss";
 
-export default () => {
+const Footer: React.FC = () => {
   return (
     <footer className="Footer">
       <Container>
@@ -24,10 +24,12 @@ export default () => {
         </Row>
         <Row className="Footer-Signature row mt-5">
           <Col className="text-center">
-            <p className="my-0">© 2018 All Rights Reserved | Spencer Marx</p>
+            <p className="my-0">© 2021 All Rights Reserved | Spencer Marx</p>
           </Col>
         </Row>
       </Container>
     </footer>
   );
 };
+
+export default Footer;

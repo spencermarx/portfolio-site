@@ -1,0 +1,14 @@
+// ======================
+// CodeBlock Component
+// ======================
+
+.language-bash,
+.language-shell,
+.language-zsh {
+  .token.plain {
+    &:before {
+      content: "$ ";
+      font-weight: bold;
+    }
+  }
+}

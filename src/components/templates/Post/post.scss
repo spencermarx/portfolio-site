@@ -1,0 +1,17 @@
+// ======================
+// Post Component
+// ======================
+
+.Post {
+  .Post-Thumbnail-Image {
+    max-height: 500px;
+    width: auto;
+  }
+
+  .Post-Gif {
+    img {
+      min-width: 60%;
+      height: auto;
+    }
+  }
+}

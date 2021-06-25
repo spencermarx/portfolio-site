@@ -1,88 +1,9 @@
 // ======================
-// Global Variables
+// Layout
 // ======================
 
 // ======================
-// Color Variables
-// ======================
-
-$primary: #000000;
-$primary-hover: #2c2c2c;
-$secondary: #6e6e6e;
-$secondary-hover: #8f8f8f;
-$light-gray: #d8d8d8;
-$light: #f8f8f8;
-$success: $primary;
-$failure: #db6565;
-$failure-hover: #db8080;
-
-// ======================
-// Breakpoints
-// ======================
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-) !default;
-
-$breakpoint-xs: 0;
-$breakpoint-sm: 576px;
-$breakpoint-md: 768px;
-$breakpoint-lg: 992px;
-$breakpoint-xl: 1200px;
-
-// ======================
-// Transitions
-// ======================
-$transition-smooth-normal: 350ms ease-in;
-$transition-smooth-fast: 150ms ease-in;
-
-// ======================
-// Shadow
-// ======================
-$shadow-normal: 0px 2px 8px rgba(0, 0, 0, 0.25);
-
-// ======================
-// Import Fonts
-// ======================
-
-@font-face {
-  font-family: "StriverX";
-  src: url("../fonts/Striverx.ttf");
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url("../fonts/Poppins-Regular.ttf");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url("../fonts/Poppins-Bold.ttf");
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url("../fonts/Poppins-ExtraLight.ttf");
-  font-weight: lighter;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url("../fonts/Poppins-ExtraLightItalic.ttf");
-  font-weight: lighter;
-  font-style: italic;
-}
-
-// ======================
-// Global Rules
+// Generic Rules
 // ======================
 
 body {
@@ -121,6 +42,11 @@ main {
 }
 
 p {
+  color: $secondary;
+}
+
+ul,
+ol {
   color: $secondary;
 }
 

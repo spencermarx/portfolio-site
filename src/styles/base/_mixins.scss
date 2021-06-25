@@ -1,0 +1,15 @@
+// ======================
+// Global Variables
+// ======================
+
+// ======================
+// Color Variables
+// ======================
+
+@mixin color-modifiers($rule) {
+  @each $name, $hex in $colors {
+    &-#{$name} {
+      #{$rule}: $hex;
+    }
+  }
+}

@@ -1,47 +1,85 @@
-const path = require('path');
+const path = require("path");
 
-// module.exports.onCreateNode = ({ node, actions }) => {
-//     const { createNodeField } = actions;
+const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
-//     if (node.internal.type === 'ContentfulProject') {
-//         const slug = node.slug;
-//         console.log("----", slug);
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      plugins: [new TsconfigPathsPlugin()],
+    },
+  });
+};
 
-//         createNodeField({
-//             node,
-//             name: 'slug',
-//             value: slug
-//         })
-//     }
-// }
+const getProjects = ({ graphql }) =>
+  graphql(`
+    query {
+      allContentfulProject {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+    }
+  `);
+
+const getBlogPages = ({ graphql }) =>
+  graphql(`
+    query {
+      allContentfulBlogPost {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+    }
+  `);
+
+module.exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
+  createTypes(`
+      type Mdx implements Node {
+        frontmatter: MdxFrontmatter
+      }
+
+      type MdxFrontmatter {
+        items: [ItemValues]
+        content: String @mdx
+      }
+
+      type ItemValues {
+        value: String @mdx
+      }
+    `);
+};
 
 module.exports.createPages = async ({ graphql, actions }) => {
-    const { createPage } = actions;
+  const { createPage } = actions;
 
-    // Get path to template
-    const projectTemplate = path.resolve('./src/templates/ProjectPage.js');
+  const projectQuery = await getProjects({ graphql });
+  const blogPostQuery = await getBlogPages({ graphql });
 
-    // Get Contentful data
-    const response = await graphql(`
-        query {
-            allContentfulProject {
-            edges {
-                node {
-                slug
-                }
-            }
-            }
-        }
-    `);
+  // Create new pages
 
-    // Create new pages
-    response.data.allContentfulProject.edges.forEach((edge) => {
-        createPage({
-            component: projectTemplate,
-            path: `/project/${edge.node.slug}`,
-            context: {
-                slug: edge.node.slug,
-            }
-        })
-    })
-}
+  // Project Pages
+  projectQuery.data.allContentfulProject.edges.forEach((edge) => {
+    createPage({
+      component: path.resolve("./src/components/templates/Project/Project.tsx"),
+      path: `/project/${edge.node.slug}`,
+      context: {
+        slug: edge.node.slug,
+      },
+    });
+  });
+
+  // Blog Pages
+  blogPostQuery.data.allContentfulBlogPost.edges.forEach((edge) => {
+    createPage({
+      component: path.resolve("./src/components/templates/Post/Post.Template.tsx"),
+      path: `/posts/${edge.node.slug}`,
+      context: {
+        slug: edge.node.slug,
+      },
+    });
+  });
+};
