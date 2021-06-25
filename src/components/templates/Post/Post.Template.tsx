@@ -9,7 +9,7 @@ import Layout from "@components/Layout";
 import TagsList from "@components/molecules/TagsList/TagsList.Molecule";
 import DropCap from "@components/atoms/DropCap/DropCap.Atom";
 import Img from "gatsby-image";
-import CodeBlock from "@components/organisms/CodeBlock/CodeBlock.organism";
+import CodeBlock from "@components/organisms/CodeBlock/CodeBlock.Organism";
 import "./post.scss";
 
 export const query = graphql`
