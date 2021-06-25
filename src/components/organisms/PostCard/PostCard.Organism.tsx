@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 import _get from "lodash.get";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLongArrowAltRight } from "@fortawesome/free-solid-svg-icons";
-import TagsList from "@components/molecules/TagsList/TagsList.Atom";
+import TagsList from "@components/molecules/TagsList/TagsList.Molecule";
 import "./postcard.scss";
 
 export interface Props {

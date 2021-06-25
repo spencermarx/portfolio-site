@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet";
 import { Container } from "react-bootstrap";
 import { DateTime } from "luxon";
 import Layout from "@components/Layout";
-import TagsList from "@components/molecules/TagsList/TagsList.Atom";
+import TagsList from "@components/molecules/TagsList/TagsList.Molecule";
 import DropCap from "@components/atoms/DropCap/DropCap.Atom";
 import Img from "gatsby-image";
 import CodeBlock from "@components/organisms/CodeBlock/CodeBlock.organism";
