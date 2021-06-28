@@ -53,7 +53,7 @@ const components = {
 const getSEO = (frontmatter: Record<string, any>, thumbnail: Record<string, any>) => (
   <Helmet
     title={frontmatter.title}
-    titleTemplate={`Marx Dev | %s`}
+    titleTemplate={`Spencer Marx | %s`}
     meta={[
       {
         name: `description`,
