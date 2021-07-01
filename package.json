@@ -9,7 +9,7 @@
     "develop": "./node_modules/.bin/env-cmd -f .env.development gatsby develop",
     "mobile-dev": "./node_modules/.bin/env-cmd -f .env.development gatsby develop -H 169.254.216.58 -p 8000",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
+    "start": "npm run serve",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
