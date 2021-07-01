@@ -8,8 +8,10 @@ import { DateTime } from "luxon";
 import Layout from "@components/Layout";
 import TagsList from "@components/molecules/TagsList/TagsList.Molecule";
 import DropCap from "@components/atoms/DropCap/DropCap.Atom";
+import Image from "@components/atoms/MDX/Image/Image.Atom";
 import Img from "gatsby-image";
 import CodeBlock from "@components/organisms/CodeBlock/CodeBlock.Organism";
+import { HeaderRegistry } from "@components/atoms/MDX/Headers/helpers/headers.helper";
 import "./post.scss";
 
 export const query = graphql`
@@ -46,7 +48,11 @@ interface Props {
 const components = {
   pre: CodeBlock,
   DropCap,
-  Img,
+  img: Image,
+  h1: HeaderRegistry.Header1,
+  h2: HeaderRegistry.Header2,
+  h3: HeaderRegistry.Header3,
+  h4: HeaderRegistry.Header4,
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
