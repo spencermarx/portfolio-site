@@ -28,6 +28,10 @@
     transition: all $transition-smooth-fast;
   }
 
+  .PostCard-Body {
+    height: 8.5rem;
+  }
+
   &:hover {
     cursor: pointer;
     transform: scale(1.03);
