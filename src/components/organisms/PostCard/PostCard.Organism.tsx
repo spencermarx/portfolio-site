@@ -26,7 +26,7 @@ const PostCard: React.FC<Props> = ({ title, slug, thumbnail, body, tags }: Props
           <Img className="PostCardThumbnail-Image" fluid={thumbnail.fluid} alt="Project Thumbnail" />
           {tags ? <TagsList className="PostCard-TagList" tags={tags} /> : null}
         </div>
-        <Card.Body className="text-center">
+        <Card.Body className="PostCard-Body text-center">
           <Card.Title className="PostCard-Title font-weight-bold">{title}</Card.Title>
           <Card.Subtitle className="PostCard-Read-Estimate">
             <p className="d-inline-block mr-2">Read in {readEstimate}</p>
