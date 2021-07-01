@@ -1,0 +1,14 @@
+$standard-gatsby-border-lg: 0.3rem;
+
+.gatsby-resp-image-wrapper {
+  margin: 3rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .gatsby-resp-image-background-image {
+    border-radius: $standard-gatsby-border-lg;
+  }
+  .gatsby-resp-image-image {
+    border-radius: $standard-gatsby-border-lg;
+  }
+}
