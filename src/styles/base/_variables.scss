@@ -13,21 +13,21 @@ $secondary-hover: #8f8f8f;
 $light-gray: #d8d8d8;
 $medium-gray: #acacac;
 $light: #f8f8f8;
-$success: $primary;
+$success: #479b55;
 $failure: #db6565;
 $failure-hover: #db8080;
 
 $colors: (
- primary: $primary,
- primary-hover: $primary-hover,
- secondary: $secondary,
- secondary-hover: $secondary-hover,
- light-gray: $light-gray,
- medium-gray: $medium-gray,
- light: $light,
- success: $success,
- failure: $failure,
- failure-hover: $failure-hover
+  primary: $primary,
+  primary-hover: $primary-hover,
+  secondary: $secondary,
+  secondary-hover: $secondary-hover,
+  light-gray: $light-gray,
+  medium-gray: $medium-gray,
+  light: $light,
+  success: $success,
+  failure: $failure,
+  failure-hover: $failure-hover,
 );
 
 // ======================

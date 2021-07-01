@@ -59,3 +59,11 @@ ol {
     text-decoration: none;
   }
 }
+
+.Toastify__toast--success {
+  background-color: $success;
+}
+
+.Toastify__toast--error {
+  background-color: $failure;
+}

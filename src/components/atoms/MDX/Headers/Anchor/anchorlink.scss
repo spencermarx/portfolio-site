@@ -1,0 +1,15 @@
+// ======================
+// AnchorLink Component
+// ======================
+
+.AnchorLink {
+  opacity: 0;
+  position: absolute;
+  transform: translate(-0.75em, -0.25em);
+  transition: $transition-smooth-normal;
+
+  &.isHovering {
+    opacity: 1;
+    cursor: pointer;
+  }
+}
