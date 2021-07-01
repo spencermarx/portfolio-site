@@ -3,6 +3,9 @@ import { Header1 } from "@components/atoms/MDX/Headers/Headers/Header1.Atom";
 import { Header2 } from "@components/atoms/MDX/Headers/Headers/Header2.Atom";
 import { Header3 } from "@components/atoms/MDX/Headers/Headers/Header3.Atom";
 import { Header4 } from "@components/atoms/MDX/Headers/Headers/Header4.Atom";
+import { BaseHeader1 } from "@components/atoms/MDX/Headers/Headers/Header1.Atom";
+import { BaseHeader2 } from "@components/atoms/MDX/Headers/Headers/Header2.Atom";
+import { BaseHeader3 } from "@components/atoms/MDX/Headers/Headers/Header3.Atom";
 
 export const getAnchorSlug = (text: string | any[]): string => {
   let slug: string;
@@ -30,4 +33,11 @@ export const HeaderRegistry: ComponentRegistry = {
   Header2,
   Header3,
   Header4,
+};
+
+export const BaseHeadersRegistry: ComponentRegistry = {
+  h1: BaseHeader1,
+  h2: BaseHeader2,
+  h3: BaseHeader3,
+  h4: BaseHeader3,
 };
